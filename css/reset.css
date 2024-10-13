@@ -83,7 +83,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -121,4 +120,13 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+a,
+button {
+  vertical-align: middle;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: #101010;
 }
