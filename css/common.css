@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./font/Pretendard-Regular.woff2") format("woff2"),
+    url("./font/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./font/Pretendard-Medium.woff2") format("woff2"),
+    url("./font/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./font/Pretendard-SemiBold.woff2") format("woff2"),
+    url("./font/Pretendard-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./font/Pretendard-Bold.woff2") format("woff2"),
+    url("./font/Pretendard-Bold.woff") format("woff");
+}
+
+* {
+  font-family: "Pretendard", AppleGothicNeo, sans-serif;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+/* 인풋 기본스타일 제거 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-result-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* 기본 공통 button */
+.btn {
+  width: 112px;
+  height: 44px;
+  background-color: #48e86c;
+  border: 0;
+  font-size: 16px;
+  color: #0d0529;
+}
+.btn-modal-close {
+  width: 36px;
+  height: 36px;
+  background-image: url("../images/close.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+  top: 6px;
+}
+/* 요소 안보이게 하기 */
+.blind {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  text-indent: -9999;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+/* 모달 */
+.modal {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  z-index: 999;
+}
+
+.modal-body {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.22),
+    0px 14px 56px rgba(0, 0, 0, 0.25);
+  padding-bottom: 30px;
+  transform: translate(-50%, -50%);
+  width: 500px;
+}
+.modal-header {
+  padding: 20px 30px 0;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-header-title {
+  font-size: 28px;
+}
+.modal-content {
+  min-height: 150px;
+  overflow: auto;
+  padding: 0 30px 15px;
+  height: 450px;
+}
+
+.wrap-bottom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

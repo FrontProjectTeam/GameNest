@@ -1,4 +1,8 @@
-@import url(reset.css);
-@import url(common.css);
-@import url(lkj.css);
-@import url(mjk.css);
+@import url(./reset.css);
+@import url(./common.css);
+@import url(./index.css);
+@import url(./content/content1.css);
+@import url(./content/content2.css);
+@import url(./content/content3.css);
+@import url(./content/content4.css);
+@import url(./content/content5.css);
