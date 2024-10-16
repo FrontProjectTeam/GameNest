@@ -3,7 +3,204 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>축구 선수 퀴즈</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <style>
+      html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      body {
+        width: 900px;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+      }
+
+      .content3-logo-img {
+        width: 28px;
+        height: 28px;
+        margin: 12px 2px;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        background-color: rgb(60, 0, 55);
+      }
+
+      .content3-header.container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 800px;
+      }
+
+      .content3-btn-color-purple {
+        background-color: rgb(60, 0, 55);
+        color: #ffffff;
+      }
+
+      #content3-epl-background-img {
+        width: 400px;
+        height: 400px;
+      }
+
+      .content3-main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content3-main-button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      footer {
+        background-color: rgb(60, 0, 55);
+        width: 100%;
+        height: 240px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .content3-footer-container {
+        width: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .content3-btn-color-white {
+        background-color: #ffffff;
+        color: black;
+      }
+
+      .content3-footer-button-container {
+        margin-top: 30px;
+      }
+
+      .content3-footer-rule-explanation {
+        margin-top: 24px;
+        color: black;
+        background-color: #ffffff;
+      }
+
+      img {
+        width: 300px;
+        height: 400px;
+      }
+
+      input {
+        width: 500px;
+        padding: 12px 24px;
+        text-align: center;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <container class="content3-header-container">
+        <img class="content3-logo-img" src="./images/arsenal.png" alt="" />
+        <img class="content3-logo-img" src="./images/astonvilla.png" alt="" />
+        <img class="content3-logo-img" src="./images/bournemouth.png" alt="" />
+        <img class="content3-logo-img" src="./images/brentford.png" alt="" />
+        <img class="content3-logo-img" src="./images/brighton.png" alt="" />
+        <img class="content3-logo-img" src="./images/chelsea.png" alt="" />
+        <img
+          class="content3-logo-img"
+          src="./images/crystalpalace.png"
+          alt=""
+        />
+        <img class="content3-logo-img" src="./images/everton.png" alt="" />
+        <img class="content3-logo-img" src="./images/fulham.png" alt="" />
+        <img class="content3-logo-img" src="./images/ipswich.png" alt="" />
+        <img class="content3-logo-img" src="./images/leicester.png" alt="" />
+        <img class="content3-logo-img" src="./images/liverpool.png" alt="" />
+        <img class="content3-logo-img" src="./images/mancity.png" alt="" />
+        <img class="content3-logo-img" src="./images/manutd.png" alt="" />
+        <img class="content3-logo-img" src="./images/newcastle.png" alt="" />
+        <img class="content3-logo-img" src="./images/nottingham.png" alt="" />
+        <img class="content3-logo-img" src="./images/southampton.png" alt="" />
+        <img class="content3-logo-img" src="./images/tottenham.png" alt="" />
+        <img class="content3-logo-img" src="./images/westham.png" alt="" />
+        <img class="content3-logo-img" src="./images/wolves.png" alt="" />
+      </container>
+    </header>
+    <main>
+      <container class="content3-main-container">
+        <div class="content3-main-img-container">
+          <img
+            id="content3-epl-background-img"
+            src="./images/epl-background-img.png"
+            alt=""
+          />
+        </div>
+      </container>
+    </main>
+    <footer>
+      <container class="content3-footer-container">
+        <p class="content3-footer-rule-explanation">
+          EPL 축구선수 인물 퀴즈 당신은 PL 선수들을 얼마나 알고 계신가요? <br />
+          풀네임도 정답 처리가 되지만 경우의 수가 많으니 웬만해서는 성만 정답에
+          적어주세요. <br />
+          (Ex. 살라, 홀란드, 외데고르)
+        </p>
+        <div class="content3-footer-button-container">
+          <button id="quize10-btn" class="btn content3-btn-color-white">
+            10개 풀기
+          </button>
+          <button id="quize20-btn" class="btn content3-btn-color-white">
+            20개 풀기
+          </button>
+          <button id="quize30-btn" class="btn content3-btn-color-white">
+            30개 풀기
+          </button>
+          <button id="quize40-btn" class="btn content3-btn-color-white">
+            40개 풀기
+          </button>
+          <button id="quize50-btn" class="btn content3-btn-color-white">
+            50개 풀기
+          </button>
+        </div>
+      </container>
+    </footer>
+  </body>
+  <script>
+    const quize10Btn = document.getElementById("quize10-btn");
+    const mainImgContainer = document.querySelector(".content3-main-container");
+    const footerContainer = document.querySelector(
+      ".content3-footer-container"
+    );
+
+    const playerImages = [
+      "./images/lucas-bergvall.avif",
+      "./images/archie-gray.webp",
+    ];
+
+    function renderPlayers(event) {
+      mainImgContainer.innerHTML = "";
+      footerContainer.innerHTML = "";
+      const answerInput = document.createElement("input");
+      footerContainer.appendChild(answerInput);
+      const newImg = document.createElement("img");
+      const randomPlayerImage = Math.floor(Math.random() * playerImages.length);
+      newImg.src = playerImages[randomPlayerImage];
+      mainImgContainer.appendChild(newImg);
+    }
+
+    quize10Btn.addEventListener("click", renderPlayers);
+  </script>
 </html>
