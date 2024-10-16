@@ -23,7 +23,7 @@
           <span class="box-title">점수</span
           ><span class="score">00<span>점</span></span>
         </div>
-        <div class="box">
+        <div class="box timer">
           <span class="box-title">경과시간</span
           ><span class="score">00<span>점</span></span>
         </div>
@@ -48,5 +48,19 @@
         </form>
       </div>
     </div>
+    <script>
+      //제공 문장과 입력한 문장이 일치하는지 확인한다.
+      const form = document.querySelector(".footer > form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const text = textInput.value;
+        console.log(text);
+
+        textInput.value = "";
+        textInput.focus();
+      });
+
+      const textInput = document.querySelector("#text");
+    </script>
   </body>
 </html>
