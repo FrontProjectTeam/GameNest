@@ -1,0 +1,80 @@
+:root {
+  --radius: 8px;
+}
+.content4 {
+  max-width: 900px;
+  margin: 0 auto;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: gray;
+  box-sizing: border-box;
+  padding: 36px 48px;
+}
+.content4 .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  max-height: 360px;
+  background-color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: var(--radius);
+}
+.content4 .header > span {
+  position: absolute;
+  top: 24px;
+}
+.content4 .header .sentence {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 36px;
+}
+.content4 .center {
+  display: grid;
+  gap: 0 12px;
+  margin-bottom: 16px;
+
+  grid-template-columns: repeat(4, 1fr);
+}
+.content4 .center .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 16px 24px 12px 24px;
+  border-radius: var(--radius);
+}
+.content4 .footer .typing-wrap {
+  display: flex;
+}
+.content4 .typing-wrap > input[type="text"] {
+  flex-grow: 1;
+  margin-right: 4px;
+  border-radius: var(--radius);
+  outline: none;
+  border: 0;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+.content4 .center .box .score {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.content4 .center .box .score > span {
+  font-size: 24px;
+  position: relative;
+  top: -3px;
+  right: -2px;
+  font-weight: 500;
+}
+.content4 .info {
+  margin-bottom: 4px;
+  display: inline-block;
+  text-indent: 4px;
+}
