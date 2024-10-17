@@ -87,6 +87,7 @@
       ];
       document.addEventListener("DOMContentLoaded", () => {
         showRandomArray();
+        settingTimer();
       });
       //유저가 입력한 문장을 확인한다.
       const form = document.querySelector(".footer > form");
@@ -133,7 +134,7 @@
           scoreEl.nodeValue = currentScore - 10;
         }
       }
-
+      //입력한 값이 맞는지 틀렸는지 확인한다.
       function checkedCorrect(text, textInput) {
         if (text === textInput) {
           console.log("true");
@@ -142,8 +143,16 @@
           console.log("false");
           updateUserScore(false);
         }
-        console.log("유저입력", text);
-        console.log("현재 화면", textInput);
+      }
+
+      //경과시간 설정하기
+      function settingTimer() {
+        const timer = document.querySelector(".timer .score").childNodes[0];
+        setInterval(() => {
+          let upDateTimer = Number(timer.nodeValue);
+          upDateTimer++;
+          timer.nodeValue = upDateTimer;
+        }, 1000);
       }
     </script>
   </body>
