@@ -29,7 +29,7 @@
           <span class="box-title">틀린문장수</span
           ><span class="score">0<span>개</span></span>
         </div>
-        <div class="box">
+        <div class="box rate">
           <span class="box-title">정답율</span
           ><span class="score">0<span>%</span></span>
         </div>
@@ -85,10 +85,12 @@
           title: "소설 <검은 사슴> 中",
         },
       ];
+
       document.addEventListener("DOMContentLoaded", () => {
         showRandomArray();
         settingTimer();
       });
+
       //유저가 입력한 문장을 확인한다.
       const form = document.querySelector(".footer > form");
       const textInput = document.querySelector("#text");
@@ -107,11 +109,9 @@
 
       //화면에 배열의 오브젝트중 하나를 보여준다.
       function showRandomArray() {
-        console.log("업뎃");
         const source = document.querySelector(".sentence > .source");
         const word = document.querySelector(".sentence > .word");
         const random = Math.floor(Math.random() * contents.length);
-        console.log(random);
         currentText.textContent = contents[random].text;
         source.textContent = contents[random].title;
         if (!contents[random].voca) {
@@ -134,15 +134,18 @@
           scoreEl.nodeValue = currentScore - 10;
         }
       }
+
       //입력한 값이 맞는지 틀렸는지 확인한다.
       function checkedCorrect(text, textInput) {
         if (text === textInput) {
           console.log("true");
           updateUserScore(true);
+          correctAnswerRate(true);
         } else {
           console.log("false");
           updateUserScore(false);
           addWrongCount();
+          correctAnswerRate(false);
         }
       }
 
@@ -161,6 +164,21 @@
           upDateTimer++;
           timer.nodeValue = upDateTimer;
         }, 1000);
+      }
+
+      //정답률 구하기
+      //유저가 맞춘 문제와 틀린 문제 수를 맞춘 문제와 나눈다.
+      let correctCount = 0;
+      let wrongCount = 0;
+      function correctAnswerRate(result) {
+        if (result) {
+          correctCount += 1;
+        } else {
+          wrongCount += 1;
+        }
+        let rate = (correctCount / (correctCount + wrongCount)) * 100;
+        const rateText = document.querySelector(".rate .score").childNodes[0];
+        rateText.nodeValue = Math.floor(rate);
       }
     </script>
   </body>
