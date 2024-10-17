@@ -11,11 +11,9 @@
       <div class="header">
         <span>아래 문장을 입력해보세요</span>
         <div class="sentence">
-          <p>
-            "나는 외로움이 좋았다. 외로움은 내 집이었고 옷이었고 밥이었다. 어떤
-            종류의 영혼은 외로움이 완성시켜준 것이어서, 그것이 빠져나가면
-            한꺼번에 허물어지고 만다."
-          </p>
+          <p class="text"></p>
+          <p class="source"></p>
+          <span class="word"></span>
         </div>
       </div>
       <div class="center">
@@ -49,18 +47,66 @@
       </div>
     </div>
     <script>
-      //제공 문장과 입력한 문장이 일치하는지 확인한다.
+      //문장이 렌덤으로 화면에 나오는 배열을 생성한다.
+      const contents = [
+        {
+          text: "삶은 누구에게도 특별히 호의적이지 않다. 그 사실을 알면서 걸을 때 내리는 진눈깨비.이마를, 눈썹을, 뺨을 물큰하게 적시는 진눈깨비. 모든 것은 지나간다.",
+          title: "소설 <흰> 中",
+          voca: "물큰하다: 연하고 부드러운 느낌이 날 정도로 물렁하다",
+        },
+        {
+          text: "태극기로, 고작 그걸로 감싸보려던 거야. 우린 도륙된 고깃덩어리들이 아니어야 하니까, 필사적으로 묵념을 하고 애국가를 부른거야.",
+          title: "소설 <소년이 온다> 中",
+          voca: "도륙되다: 사람이나 짐승이 함부로 참옥하게 죽임을 당하다",
+        },
+        {
+          text: "성근 눈이 내리고 있었다.",
+          title: "소설 <작별하지 않는다> 첫 문장",
+          voca: "성글다: 물건의 사이가 뜨다",
+        },
+        {
+          text: "어떤 종류의 슬픔은 물기 없이 단단해서, 어떤 칼로도 연마되지 않는 원석과 같다.",
+          title: "시집 <서랍에 저녁을 넣어두었다> 中",
+          voca: "연마되다: 돌이나 쇠붙이 따위의 고체가 갈리고 닦여서 표면이 반질반질하게 되다",
+        },
+        {
+          text: "양심이라는 눈부시게 깨끗한 보석이 내 이마에 들어와 박힌 것 같은 순간의 광휘를.",
+          title: "소설 <소년이 온다> 中",
+          voca: "광휘: 환하고 아름답게 눈이 부심. 또는 그 빛",
+        },
+        {
+          text: "세계와 나 사이에 소슬한 경계가 생긴다.",
+          title: "소설 <작별하지 않는다> 中",
+          voca: "소슬하다: 으스스하고 쓸쓸하다",
+        },
+        {
+          text: "나는 외로움이 좋았다. 외로움은 내 집이었고 옷이었고 밥이었다. 어떤 종류의 영혼은 외로움이 완성시켜준 것이어서, 그것이 빠져나가면 한꺼번에 허물어지고 만다.",
+          title: "소설 <검은 사슴> 中",
+        },
+      ];
+
+      //유저가 입력한 문장을 확인한다.
       const form = document.querySelector(".footer > form");
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         const text = textInput.value;
-        console.log(text);
-
         textInput.value = "";
         textInput.focus();
       });
-
       const textInput = document.querySelector("#text");
+
+      //화면에 배열의 오브젝트중 하나를 보여준다.
+      const text = document.querySelector(".sentence > .text");
+      const source = document.querySelector(".sentence > .source");
+      const word = document.querySelector(".sentence > .word");
+      const random = Math.floor(Math.random() * contents.length);
+      text.innerHTML = contents[random].text;
+      source.innerHTML = contents[random].title;
+      if (!contents[random].voca) {
+        word.innerHTML = "";
+      } else {
+        word.innerHTML = contents[random].voca;
+      }
     </script>
   </body>
 </html>

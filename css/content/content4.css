@@ -24,6 +24,22 @@
   position: relative;
   border-radius: var(--radius);
 }
+.content4 .header .sentence .source {
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 500;
+}
+.content4 .header .sentence .word {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  font-size: 14px;
+  left: 50%;
+  text-align: center;
+  font-weight: 400;
+  transform: translateX(-50%);
+}
 .content4 .header > span {
   position: absolute;
   top: 24px;
@@ -32,6 +48,8 @@
   font-size: 20px;
   font-weight: 600;
   padding: 0 36px;
+  max-width: 700px;
+  box-sizing: border-box;
 }
 .content4 .center {
   display: grid;
