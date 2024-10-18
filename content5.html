@@ -4,36 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="css/content/content5.css" />
   </head>
-  <body>
+  <body id="background">
     <header>
-      <p id="header-score">점수</p>
+      <div id="header-count-range">
+        <p class="header-count">점수</p>
 
-      <p id="header-number">0</p>
+        <p class="header-count">0</p>
+      </div>
     </header>
     <main>
       <div class="main-hp-range">
         <div>
-          <ul>
-            <li class="main-myhp"></li>
-            <li class="main-myhp"></li>
-            <li class="main-myhp"></li>
-            <li class="main-myhp"></li>
+          <ul class="main-hp-ul">
+            <li class="main-hp"></li>
+            <li class="main-hp"></li>
+            <li class="main-hp"></li>
+            <li class="main-hp"></li>
           </ul>
         </div>
 
         <div>
-          <ul>
-            <li class="main-yourhp"></li>
-            <li class="main-yourhp"></li>
-            <li class="main-yourhp"></li>
-            <li class="main-yourhp"></li>
+          <ul class="main-hp-ul">
+            <li class="main-hp"></li>
+            <li class="main-hp"></li>
+            <li class="main-hp"></li>
+            <li class="main-hp"></li>
           </ul>
         </div>
       </div>
 
       <div class="main-word-range">
-        <ul>
+        <ul id="main-word-ul">
           <li class="main-word">단어</li>
           <li class="main-word">단어</li>
           <li class="main-word">단어</li>
@@ -42,9 +45,9 @@
         </ul>
       </div>
 
-      <div id="main-input-range">
-        <p>입력</p>
-        <input type="text" />
+      <div id="main-text-range">
+        <p id="main-text-p">입력</p>
+        <input type="text" id="main-text" />
       </div>
     </main>
   </body>
