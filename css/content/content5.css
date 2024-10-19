@@ -80,6 +80,11 @@ header {
   border: 3px solid black;
 }
 
+#main-text-center {
+  display: flex;
+  justify-content: center;
+}
+
 #main-text-p {
   font-size: 25px;
   text-align: center;
@@ -92,5 +97,4 @@ header {
   outline: none;
   background-color: antiquewhite;
   font-size: 25px;
-  text-align: center;
 }
