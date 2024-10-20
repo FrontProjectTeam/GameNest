@@ -1247,11 +1247,13 @@
       footerContainer.innerHTML = "";
       const answerBox = document.createElement("div");
       answerBox.style.color = "white";
+
+      userAnswer = userAnswer.replace(/\s+/g, "");
+      const correctAnswerForCompare = correctAnswer.split(" ");
+
       if (
-        correctAnswer
-          .replace(/\s+/g, "")
-          .toLowerCase()
-          .endsWith(userAnswer.replace(/\s+/g, "").toLowerCase())
+        correctAnswerForCompare.join("") === userAnswer ||
+        correctAnswerForCompare.includes(userAnswer)
       ) {
         answerBox.innerHTML = `정답! <br> ${correctAnswer}`;
 
@@ -1284,7 +1286,6 @@
 
     quizButton.addEventListener("click", (event) => {
       startQuiz(event.target);
-      console.log(event.target);
     });
   </script>
 </html>
