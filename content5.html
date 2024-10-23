@@ -6,51 +6,90 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/content/content5.css" />
   </head>
-  <body id="background">
+  <body id="background" class="content5">
     <header>
       <div id="header-count-range">
-        <p class="header-count">점수</p>
-
-        <p class="header-count">0</p>
+        <p class="header-count">남은시간</p>
+        <p class="header-count" id="header-count-number">0</p>
       </div>
     </header>
     <main>
       <div class="main-hp-range">
         <div>
           <ul class="main-hp-ul">
-            <li class="main-hp"></li>
-            <li class="main-hp"></li>
-            <li class="main-hp"></li>
-            <li class="main-hp"></li>
-          </ul>
-        </div>
-
-        <div>
-          <ul class="main-hp-ul">
-            <li class="main-hp"></li>
-            <li class="main-hp"></li>
-            <li class="main-hp"></li>
-            <li class="main-hp"></li>
+            <li id="hp1" class="main-hp">hp</li>
+            <li id="hp2" class="main-hp">hp</li>
+            <li id="hp3" class="main-hp">hp</li>
+            <li id="hp4" class="main-hp">hp</li>
+            <li id="hp5" class="main-hp">hp</li>
           </ul>
         </div>
       </div>
-
       <div class="main-word-range">
-        <ul id="main-word-ul">
-          <li class="main-word">단어</li>
-          <li class="main-word">단어</li>
-          <li class="main-word">단어</li>
-          <li class="main-word">단어</li>
-          <li class="main-word">단어</li>
-        </ul>
+        <div id="main-word-ul">
+          <p class="main-word">단어</p>
+        </div>
       </div>
 
       <div id="main-text-center">
         <div id="main-text-range">
           <p id="main-text-p">입력:</p>
-          <input type="text" id="main-text" />
+          <form>
+            <input type="text" id="main-text" />
+          </form>
         </div>
       </div>
     </main>
   </body>
+  <script>
+    const words = ["가", "나", "다", "라", "마", "바", "사"];
+
+    const mainWord = document.querySelector(".main-word");
+    const form = document.querySelector("form");
+    const text = document.querySelector("#main-text");
+    const hpul = document.querySelector(".main-hp-ul");
+    let hpcount = 5;
+
+    function setInnerText() {
+      let random = words[Math.floor(Math.random() * words.length)];
+      mainWord.innerText = random;
+      console.log("바뀜");
+      console.log(random);
+    }
+
+    function CreateHp() {
+      const newli = document.createElement("li");
+      newli.className = "main-hp";
+      const newtext = document.createTextNode("hp");
+      hpcount++;
+      newli.id = "hp" + hpcount;
+      newli.appendChild(newtext);
+      hpul.appendChild(newli);
+    }
+
+    function RemoveHp() {
+      const removeli = document.querySelector("hp" + hpcount);
+      console.log(removeli);
+      hpcount--;
+      removeli.remove();
+    }
+
+    setInnerText();
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      let userText = text.value;
+
+      if (mainWord.innerText === userText) {
+        console.log("같음");
+        setInnerText();
+        CreateHp();
+      } else {
+        console.log("다름");
+        RemoveHp();
+      }
+
+      text.value = "";
+    });
+  </script>
 </html>
