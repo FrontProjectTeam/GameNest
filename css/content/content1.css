@@ -1,0 +1,229 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.score-wrapper-w {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  margin-top: 0px;
+}
+.score-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.score {
+}
+
+.score-my-count {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+.score-opponent-count {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+body {
+  background-color: green;
+}
+
+main {
+  margin-top: 40px;
+  width: 100%;
+  height: 500px;
+  display: grid;
+  grid-template-areas:
+    "agk agk agk"
+    "abl abc abr"
+    "gc gc gc"
+    "dbl dbc dbr"
+    "dgk dgk dgk";
+}
+
+.df {
+  opacity: 0;
+}
+.atk {
+  opacity: 1;
+}
+.atk-goal-post {
+  width: 1000px;
+  height: 20px;
+  background-color: black;
+  margin-bottom: 10px;
+}
+.df-goal-post {
+  width: 1000px;
+  height: 20px;
+  background-color: black;
+  margin-top: 10px;
+}
+
+.atk-gk {
+  position: relative;
+  grid-area: agk;
+}
+.atk-gk > div {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+}
+.atk-ball-left {
+  grid-area: abl;
+}
+
+.atk-ball-left > button {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.atk-ball-center {
+  grid-area: abc;
+}
+.atk-ball-center > button {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.atk-ball-right {
+  grid-area: abr;
+}
+.atk-ball-right > button {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+}
+.ball-center {
+  grid-area: gc;
+}
+.atk-ball-left > button {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.df-ball-left {
+  grid-area: dbl;
+}
+.df-ball-left > button {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+}
+.df-ball-center {
+  grid-area: dbc;
+}
+.ball-center > div {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+}
+.df-ball-center > button {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+}
+.df-ball-right {
+  grid-area: dbr;
+}
+.df-ball-right > button {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.df-gk {
+  grid-area: dgk;
+}
+.df-gk > div {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+}
+.gk {
+  position: absolute;
+  z-index: 1px;
+
+  width: 30px;
+  height: 30px;
+}
+
+.next-button {
+  position: relative;
+}
+.next-button > button {
+  position: absolute;
+  right: 20px;
+  width: 100px;
+  height: 20px;
+}
+.ball-center {
+  transition: transform 2s;
+}
+
+.atk-ball-center-move-left {
+  transform: translate(-20%, -20%);
+}
+
+.atk-ball-center-move-right {
+  transform: translate(20%, -20%);
+}
+
+.atk-ball-center-move-center {
+  transform: translateY(-20%);
+}
+
+.df-ball-center-move-left {
+  transform: translate(-20%, +20%);
+}
+
+.df-ball-center-move-right {
+  transform: translate(20%, +20%);
+}
+
+.df-ball-center-move-center {
+  transform: translateY(+20%);
+}
+.df-gk-left {
+  transform: translateX(-500px);
+}
+.df-gk-right {
+  transform: translateX(500px);
+}
+
+.result {
+  background-color: aquamarine;
+  position: absolute;
+  top: 50px;
+  width: 240px;
+  height: 80px;
+  opacity: 0.1;
+}
