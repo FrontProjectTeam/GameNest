@@ -43,7 +43,8 @@ header {
   display: flex;
 }
 
-.main-hp {
+.my-main-hp,
+.enemy-main-hp {
   height: 50px;
   width: 50px;
   margin: 10px;

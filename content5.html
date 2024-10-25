@@ -10,24 +10,22 @@
     <header>
       <div id="header-count-range">
         <p class="header-count">남은시간</p>
-        <p class="header-count" id="header-count-number">0</p>
+        <p class="header-count" id="header-sec">100초</p>
       </div>
     </header>
     <main>
       <div class="main-hp-range">
         <div>
           <ul class="main-hp-ul">
-            <li id="hp1" class="main-hp">hp</li>
-            <li id="hp2" class="main-hp">hp</li>
-            <li id="hp3" class="main-hp">hp</li>
-            <li id="hp4" class="main-hp">hp</li>
-            <li id="hp5" class="main-hp">hp</li>
+            <li id="hp1" class="my-main-hp">hp</li>
+            <li id="hp2" class="my-main-hp">hp</li>
+            <li id="hp3" class="my-main-hp">hp</li>
           </ul>
         </div>
       </div>
       <div class="main-word-range">
         <div id="main-word-ul">
-          <p class="main-word">단어</p>
+          <p class="main-word"></p>
         </div>
       </div>
 
@@ -48,7 +46,9 @@
     const form = document.querySelector("form");
     const text = document.querySelector("#main-text");
     const hpul = document.querySelector(".main-hp-ul");
-    let hpcount = 5;
+    let hpcount = 3;
+    let sec = 100;
+    let level = 3000;
 
     function setInnerText() {
       let random = words[Math.floor(Math.random() * words.length)];
@@ -59,7 +59,7 @@
 
     function CreateHp() {
       const newli = document.createElement("li");
-      newli.className = "main-hp";
+      newli.className = "my-main-hp";
       const newtext = document.createTextNode("hp");
       hpcount++;
       newli.id = "hp" + hpcount;
@@ -68,13 +68,23 @@
     }
 
     function RemoveHp() {
-      const removeli = document.querySelector("hp" + hpcount);
+      const removeli = document.getElementById("hp" + hpcount);
       console.log(removeli);
       hpcount--;
       removeli.remove();
     }
+    function countTimer() {
+      if (sec !== 0) {
+        sec--;
+      } else {
+        console.log("Gamewin");
+        location.reload(true);
+      }
+      document.getElementById("header-sec").innerText = sec;
+    }
 
     setInnerText();
+    setInterval(countTimer, 1000);
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -88,7 +98,11 @@
         console.log("다름");
         RemoveHp();
       }
-
+      console.log(hpcount);
+      if (hpcount == 0) {
+        console.log("GameOver");
+        location.reload(true);
+      }
       text.value = "";
     });
   </script>
