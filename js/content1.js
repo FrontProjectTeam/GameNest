@@ -264,10 +264,14 @@ function btdisable() {
   bt.forEach((button) => {
     button.disabled = true;
   });
+  const nextbt = document.querySelector(".next-button-switch");
+  nextbt.disabled = false;
 }
 function btable() {
   const bt = document.querySelectorAll(".switchbutton");
   bt.forEach((button) => {
     button.disabled = false;
   });
+  const nextbt = document.querySelector(".next-button-switch");
+  nextbt.disabled = true;
 }
