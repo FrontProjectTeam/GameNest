@@ -79,6 +79,10 @@
       "의자",
       "우산",
     ];
+
+    const mainWord = document.querySelector(".main-word");
+    const form = document.querySelector("form");
+    const text = document.querySelector("#main-text");
     const hpul = document.querySelector(".main-hp-ul");
     let hpcount = 3;
     let sec = 100;
@@ -119,8 +123,7 @@
 
     setInnerText();
     setInterval(countTimer, 1000);
-    setInterval((level -= 500), 20000);
-    setInterval(RemoveHp, level);
+    setInterval(RemoveHp, 3000);
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
