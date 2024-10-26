@@ -42,19 +42,26 @@
         <div></div>
       </div>
       <div class="atk-ball-left ball atk flex-center">
-        <button onclick="attackleft() ;moveball('atkleft');movegkopponent() ">
+        <button
+          class="switchbutton"
+          onclick="attackleft() ;moveball('atkleft');movegkopponent(); btdisable() "
+        >
           L
         </button>
       </div>
       <div class="atk-ball-center ball atk flex-center">
         <button
-          onclick="attackcenter();moveball('atkcenter');movegkopponent() "
+          class="switchbutton"
+          onclick="attackcenter();moveball('atkcenter');movegkopponent() ; btdisable()"
         >
           C
         </button>
       </div>
       <div class="atk-ball-right ball atk flex-center">
-        <button onclick=" attackright();moveball('atkright');movegkopponent() ">
+        <button
+          class="switchbutton"
+          onclick=" attackright();moveball('atkright');movegkopponent() ; btdisable()"
+        >
           R
         </button>
       </div>
@@ -62,15 +69,26 @@
         <div><div class="atk-or-df flex-center">attack</div></div>
       </div>
       <div class="df-ball-left ball df flex-center">
-        <button onclick="moveballopponent();defendleft();movegk('dfgkleft')">
+        <button
+          class="switchbutton"
+          onclick="moveballopponent();defendleft();movegk('dfgkleft'); btdisable()"
+        >
           L
         </button>
       </div>
       <div class="df-ball-center ball df flex-center">
-        <button onclick="moveballopponent();defendcenter() ">C</button>
+        <button
+          class="switchbutton"
+          onclick="moveballopponent();defendcenter() ; btdisable()"
+        >
+          C
+        </button>
       </div>
       <div class="df-ball-right ball df flex-center">
-        <button onclick="moveballopponent();defendright();movegk('dfgkright') ">
+        <button
+          class="switchbutton"
+          onclick="moveballopponent();defendright();movegk('dfgkright'); btdisable() "
+        >
           R
         </button>
       </div>
@@ -82,7 +100,7 @@
 
     <div class="next-button">
       <button
-        onclick="  result_compute(my_score,opponent_score); atk_df_change() ;result_show();info_atk_df()"
+        onclick="  result_compute(my_score,opponent_score); atk_df_change() ;result_show();info_atk_df(); btable()"
       >
         next
       </button>

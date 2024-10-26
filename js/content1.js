@@ -259,3 +259,15 @@ function info_atk_df() {
     ? (document.getElementsByClassName("atk-or-df")[0].innerHTML = "attack")
     : (document.getElementsByClassName("atk-or-df")[0].innerHTML = "defend");
 }
+function btdisable() {
+  const bt = document.querySelectorAll(".switchbutton");
+  bt.forEach((button) => {
+    button.disabled = true;
+  });
+}
+function btable() {
+  const bt = document.querySelectorAll(".switchbutton");
+  bt.forEach((button) => {
+    button.disabled = false;
+  });
+}
