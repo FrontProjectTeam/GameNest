@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/content/content2.css" />
+    <title>Modal alert</title>
+  </head>
+  <body>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img src="./images/congrats.gif" alt="Congratulations!" />
+        <p>
+          Congratulations! <br />
+          You guessed the number in
+          <span id="turns-count" class="count_style">X</span> turns.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+        document.getElementById("modal").remove();
+      }
+    </script>
+  </body>
+</html>

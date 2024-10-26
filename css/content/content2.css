@@ -1,8 +1,3 @@
-.main-inner {
-  width: 900px;
-  height: 700px;
-}
-
 .main_body {
   position: relative; /* 确保子元素绝对定位时基于此容器 */
   margin: 0 auto;
@@ -12,12 +7,17 @@
   overflow: hidden; /* 防止溢出内容影响布局 */
 }
 
+.main-inner {
+  width: 900px;
+  height: 700px;
+}
+
 .video-background {
   position: relative; /* 让视频固定在背景 */
-  width: 900px; /* 占满宽度 */
-  height: 700px; /* 占满高度 */
+  width: 900px;
+  height: 700px;
   overflow: hidden; /* 隐藏多余部分 */
-  z-index: -1; /* 将视频置于内容后 */
+  z-index: -1;
 }
 
 #bg-video {
@@ -25,8 +25,8 @@
   object-fit: cover;
   top: 50%;
   left: 50%;
-  min-width: 100%; /* 保持视频宽度占满屏幕 */
-  min-height: 100%; /* 保持视频高度占满屏幕 */
+  min-width: 100%;
+  min-height: 100%;
   width: auto;
   height: auto;
   transform: translate(-50%, -50%); /* 使视频居中 */
@@ -47,10 +47,19 @@
   align-items: center;
 }
 
+.main_function_button_style_playmusic {
+  background-color: rgba(74, 66, 224, 0.993);
+  font-size: 15px;
+  border-radius: 4px;
+  border: none;
+  color: rgb(227, 236, 134);
+  cursor: pointer;
+}
+
 .main_head-container {
-  display: flex; /* 覆盖默认的 display: block */
-  justify-content: center; /* 子元素居中对齐 */
-  align-items: center; /* 垂直方向居中对齐 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
   gap: 0;
@@ -74,21 +83,20 @@
 }
 
 .main_head_logo_img {
-  width: 120px; /* 원하는 너비 설정 */
-  height: 120px; /* 원하는 높이 설정 (너비와 같게 설정하여 원형 유지) */
-  border-radius: 50%; /* 완전한 원형으로 만들기 */
-  object-fit: cover; /* 이미지 비율 유지하면서 크기 조정 */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
   display: block; /* 부모 요소의 margin이 영향을 미치지 않도록 설정 */
   opacity: 0.6;
 }
 
 .main_turns_button-container {
-  display: flex; /* 覆盖默认的 display: block */
-  justify-content: center; /* 子元素居中对齐 */
-  align-items: center; /* 垂直方向居中对齐 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
-  margin: 40px 0 0 0;
-  gap: 0;
+  margin: 20px 0 20px 0;
   list-style-type: none; /* 移除默认项目符号 */
 }
 
@@ -97,12 +105,10 @@
   justify-content: center;
   align-items: center;
   padding: 0px;
-  margin: 0;
-  border: 2px solid transparent; /* Make border transparent */
-  border-radius: 8px; /* Optional: Rounded corners */
-  font-size: 20px; /* Set font size to 20px */
-  gap: 0px;
-  width: 100px; /* Set a specific width for the box */
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 20px;
+  width: 100px;
   height: 30px;
   background-color: rgba(
     169,
@@ -110,19 +116,18 @@
     241,
     0.8
   ); /* Set background to transparent */
-  cursor: pointer; /* Change cursor to pointer */
-  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8); /* Add a white line at the bottom */
+  box-shadow: 0px 6px 0px 0px rgba(255, 255, 255, 0.8); /* Add a white line at the bottom */
   color: rgb(0, 0, 0);
 }
 
 .main_show_button-container {
-  display: flex; /* 覆盖默认的 display: block */
-  justify-content: center; /* 子元素居中对齐 */
-  align-items: center; /* 垂直方向居中对齐 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
   gap: 15px;
-  list-style-type: none; /* 移除默认项目符号 */
+  list-style-type: none;
 }
 
 .main_show_button {
@@ -131,49 +136,53 @@
   padding: 0;
   justify-content: center;
   align-items: center;
+  width: 60px;
   padding: 10px; /* Add some padding inside the box */
-  margin: 0; /* Remove default margin */
-  border-left: 50px solid transparent; /* 左边框 */
-  border-right: 50px solid transparent; /* 右边框 */
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
   border-top: 45px solid rgba(224, 170, 226, 0.8);
   font-size: 20px; /* Set font size to 20px */
-  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8); /* Add a white line at the bottom */
+  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8);
   color: rgb(232, 220, 90);
 }
 
 .main_show_input_button {
-  display: inline-block; /* Use flexbox */
-  margin: 0;
-  padding: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px; /* Add some padding inside the box */
-  margin: 0; /* Remove default margin */
-  border-left: 50px solid transparent; /* 左边框 */
-  border-right: 50px solid transparent; /* 右边框 */
+  width: 150px;
+  height: 120px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
   border-bottom: 45px solid rgba(80, 161, 202, 0.8);
-  font-size: 20px; /* Set font size to 20px */
-  cursor: pointer; /* Change cursor to pointer */
-  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8); /* Add a white line at the bottom */
-  color: rgb(232, 220, 90);
+  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+#guess-input {
+  display: flex;
+  justify-content: center;
+  background-color: transparent; /* 设置背景为透明 */
+  border: none; /* 移除边框 */
+  color: rgb(90, 240, 180);
+  font-size: 50px;
+  text-align: center; /* 让数字居中 */
+  outline: none; /* 移除选中时的轮廓 */
 }
 
 .main_show_symbol {
-  display: flex; /* Use flexbox */
-  margin: 0;
-  padding: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px; /* Add some padding inside the box */
   margin: 0; /* Remove default margin */
-  border: 2px solid transparent; /* Make border transparent */
-  border-radius: 50%; /* Optional: Rounded corners */
-  font-size: 50px; /* Set font size to 20px */
-  gap: 0px;
-  width: 50px; /* Set a specific width for the box */
-  height: 50px;
-  background-color: rgba(101, 228, 75, 0.8); /* Set background to transparent */
-  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8); /* Add a white line at the bottom */
+  border: 2px solid transparent;
+  border-radius: 50%;
+  font-size: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(101, 228, 75, 0.8);
+  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8);
   color: rgb(0, 0, 0);
 }
 .main_function_button-container {
@@ -182,7 +191,7 @@
   align-items: center; /* 垂直方向居中对齐 */
   padding: 0;
   margin: 5cqmin 0 0 0;
-  gap: 15px;
+  gap: 35px;
   list-style-type: none; /* 移除默认项目符号 */
 }
 
@@ -191,27 +200,47 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin: 0;
-  border: 2px solid transparent; /* Make border transparent */
-  border-radius: 8px; /* Optional: Rounded corners */
-  font-size: 20px; /* Set font size to 20px */
-  gap: 0px;
-  width: 100px; /* Set a specific width for the box */
-  height: 30px;
-  background-color: rgba(209, 186, 54, 0.8); /* Set background to transparent */
-  cursor: pointer; /* Change cursor to pointer */
-  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8); /* Add a white line at the bottom */
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 20px;
+  width: 80px;
+  height: 15px;
+  background-color: rgba(209, 186, 54, 0.8);
+  cursor: pointer;
+  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8);
   color: rgb(0, 0, 0);
 }
 
 .main_function_button:hover {
-  transform: scale(1.15); /* Scale effect on hover */
+  transform: scale(1.15);
+}
+
+.main_function_button_style_reset {
+  background-color: rgba(163, 173, 240, 0.993);
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.main_function_button_style_guess {
+  background-color: rgba(127, 240, 131, 0.993);
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.main_function_button_style_clear {
+  background-color: rgba(240, 204, 163, 0.993);
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 .main_number_button-container {
-  display: flex; /* 覆盖默认的 display: block */
-  justify-content: center; /* 子元素居中对齐 */
-  align-items: center; /* 垂直方向居中对齐 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 60px 0 0 0;
   gap: 15px;
@@ -219,21 +248,57 @@
 }
 
 .main_number_button {
-  display: flex; /* Use flexbox */
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Add some padding inside the box */
-  margin: 0; /* Remove default margin */
-  border: 2px solid transparent; /* Make border transparent */
-  border-radius: 50%; /* Optional: Rounded corners */
-  font-size: 20px; /* Set font size to 20px */
-  gap: 0;
-  width: 30px; /* Set a specific width for the box */
+  padding: 8px; /* Add some padding inside the box */
+  border: 2px solid transparent;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 30px;
   height: 30px;
-  cursor: pointer; /* Change cursor to pointer */
-  box-shadow: 0px 4px 0px 0px white; /* Add a white line at the bottom */
+  cursor: pointer;
+  box-shadow: 0px 4px 0px 0px white;
   color: rgb(0, 0, 0);
 }
 .main_number_button:hover {
-  transform: scale(1.25); /* Scale effect on hover */
+  transform: scale(1.25);
+}
+
+.modal {
+  display: inline;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  width: 900px;
+  height: 700px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 15%;
+  width: 300px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.count_style {
+  color: brown;
+  font-size: 25px;
 }
