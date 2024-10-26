@@ -1,6 +1,4 @@
-const mainContainer = document.querySelector(".content3-main-container");
-const footerContainer = document.querySelector(".content3-footer-container");
-const quizButton = document.querySelector(".content3-footer-button-container");
+
 let currentNumberOfQuiz = 0;
 let totalNumberOfQuiz;
 let score = 0;
@@ -1106,8 +1104,8 @@ const players = [
 ];
 
 let startQuiz = (event) => {
-  mainContainer.innerHTML = "";
-  footerContainer.innerHTML = "";
+  document.querySelector(".content3-main-container").innerHTML = "";
+  document.querySelector(".content3-footer-container").innerHTML = "";
   let buttonText = event.innerHTML;
   const regex = /[^0-9]/g;
   totalNumberOfQuiz = buttonText.replace(regex, "");
@@ -1116,8 +1114,8 @@ let startQuiz = (event) => {
 
 let nextQuiz = (event) => {
   if (currentNumberOfQuiz < totalNumberOfQuiz) {
-    mainContainer.innerHTML = "";
-    footerContainer.innerHTML = "";
+    document.querySelector(".content3-main-container").innerHTML = "";
+    document.querySelector(".content3-footer-container").innerHTML = "";
     let input = document.createElement("input");
     input.placeholder = "선수 이름을 입력해주세요";
     input.className = "content3-input";
@@ -1127,8 +1125,8 @@ let nextQuiz = (event) => {
     playerImages.src = players[randomIndex].imgSrc;
     playerImages.className = "content3-img";
 
-    mainContainer.appendChild(playerImages);
-    footerContainer.appendChild(input);
+    document.querySelector(".content3-main-container").appendChild(playerImages);
+    document.querySelector(".content3-footer-container").appendChild(input);
 
     input.addEventListener("keydown", function (event) {
       if (event.key == "Enter") {
@@ -1144,7 +1142,7 @@ let nextQuiz = (event) => {
 };
 
 let checkAnswer = (userAnswer, correctAnswer) => {
-  footerContainer.innerHTML = "";
+  document.querySelector(".content3-footer-container").innerHTML = "";
   const answerBox = document.createElement("div");
   answerBox.style.color = "white";
 
@@ -1161,29 +1159,29 @@ let checkAnswer = (userAnswer, correctAnswer) => {
   } else {
     answerBox.innerHTML = `오답! <br> ${correctAnswer}`;
   }
-  footerContainer.appendChild(answerBox);
+  document.querySelector(".content3-footer-container").appendChild(answerBox);
   setTimeout(() => {
     nextQuiz();
   }, 1000);
 };
 
 let finishQuiz = (event) => {
-  mainContainer.innerHTML = "";
-  footerContainer.innerHTML = "";
+  document.querySelector(".content3-main-container").innerHTML = "";
+  document.querySelector(".content3-footer-container").innerHTML = "";
 
   let scoreBoard = document.createElement("p");
-  mainContainer.appendChild(scoreBoard);
+  document.querySelector(".content3-main-container").appendChild(scoreBoard);
   scoreBoard.textContent = `퀴즈종료! 당신의 점수는 ${score} / ${totalNumberOfQuiz}`;
 
   let returnBtn = document.createElement("button");
   returnBtn.textContent = "돌아가기";
-  footerContainer.appendChild(returnBtn);
+  document.querySelector(".content3-footer-container").appendChild(returnBtn);
 
   returnBtn.addEventListener("click", function (event) {
     location.reload();
   });
 };
 
-quizButton.addEventListener("click", (event) => {
+document.querySelector(".content3-footer-button-container").addEventListener("click", (event) => {
   startQuiz(event.target);
 });
