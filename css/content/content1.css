@@ -218,6 +218,12 @@ main {
 .df-gk-right {
   transform: translateX(500px);
 }
+.atk-gk-left {
+  transform: translateX(-500px);
+}
+.atk-gk-right {
+  transform: translateX(500px);
+}
 
 .result {
   background-color: aquamarine;

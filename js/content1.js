@@ -3,6 +3,8 @@ let my_score = [];
 let opponent_score = [];
 let opponent_random_defend = [];
 let opponent_random_attack = [];
+let opponentattackcount = 0;
+let opponentdefendcount = 0;
 for (let i = 0; i < 5; i++) {
   const random = Math.floor(Math.random() * 3 + 1);
   opponent_random_attack.push(random);
@@ -26,7 +28,8 @@ function atk_df_change() {
 
   switch_df_atk = !switch_df_atk;
 }
-
+console.log(opponent_random_defend);
+console.log(opponent_random_attack);
 //1 :왼 2: 가 3: 오
 let count_attack = 0;
 let count_defend = 0;
@@ -146,12 +149,71 @@ function movegk(direction) {
       break;
   }
   setTimeout(() => {
-    resetGkPosition();
+    resetGkPosition1();
   }, 2000);
 }
-function resetGkPosition() {
+function resetGkPosition1() {
   const gk = document.querySelector(".df-gk>div");
   gk.classList.remove("df-gk-left", "df-gk-right");
+}
+
+////opponent
+
+function moveballopponent() {
+  // 내가 수비할때 함수 주기
+
+  const ballCenter = document.querySelector(".ball-center");
+
+  // 모든 기존 이동 클래스를 제거
+  ballCenter.classList.remove(
+    "atk-ball-center-move-left",
+    "atk-ball-center-move-right",
+    "atk-ball-center-move-center",
+    "df-ball-center-move-left",
+    "df-ball-center-move-right",
+    "df-ball-center-move-center"
+  );
+  direction = opponent_random_attack[opponentattackcount];
+  switch (direction) {
+    case 1:
+      ballCenter.classList.add("df-ball-center-move-left");
+      break;
+    case 2:
+      ballCenter.classList.add("df-ball-center-move-center");
+      break;
+    case 3:
+      ballCenter.classList.add("df-ball-center-move-right");
+      break;
+  }
+  opponentattackcount++;
+  setTimeout(() => {
+    resetBallPosition();
+  }, 2000); // 2000ms (2초) 후에 원래 자리로 돌아갑니다.
+
+  // 원래 자리로 돌아가는 함수
+}
+
+function movegkopponent() {
+  const gk = document.querySelector(".atk-gk>div");
+  direction = opponent_random_defend[opponentdefendcount];
+  gk.classList.remove("atk-gk-left", "atk-gk-right");
+  switch (direction) {
+    case 1:
+      gk.classList.add("atk-gk-left");
+      break;
+    case 3:
+      gk.classList.add("atk-gk-right");
+      break;
+  }
+  opponentdefendcount++;
+  setTimeout(() => {
+    resetGkPosition2();
+  }, 2000);
+}
+function resetGkPosition2() {
+  const gk = document.querySelector(".atk-gk>div");
+  gk.classList.remove("atk-gk-left", "atk-gk-right");
+  console.log(1);
 }
 
 function result_compute(my_score, opponent_score) {

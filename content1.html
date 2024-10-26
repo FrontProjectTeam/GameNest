@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="./js/content1.js"></script>
     <link rel="stylesheet" href="./css/content/content1.css" />
   </head>
   <body>
@@ -41,23 +42,35 @@
         <div></div>
       </div>
       <div class="atk-ball-left ball atk flex-center">
-        <button onclick="attackleft() ;moveball('atkleft') ">L</button>
+        <button onclick="attackleft() ;moveball('atkleft');movegkopponent() ">
+          L
+        </button>
       </div>
       <div class="atk-ball-center ball atk flex-center">
-        <button onclick="attackcenter();moveball('atkcenter') ">C</button>
+        <button
+          onclick="attackcenter();moveball('atkcenter');movegkopponent() "
+        >
+          C
+        </button>
       </div>
       <div class="atk-ball-right ball atk flex-center">
-        <button onclick="attackright();moveball('atkright') ">R</button>
+        <button onclick=" attackright();moveball('atkright');movegkopponent() ">
+          R
+        </button>
       </div>
       <div class="ball-center ball flex-center"><div></div></div>
       <div class="df-ball-left ball df flex-center">
-        <button onclick="defendleft();movegk('dfgkleft')">L</button>
+        <button onclick="moveballopponent();defendleft();movegk('dfgkleft')">
+          L
+        </button>
       </div>
       <div class="df-ball-center ball df flex-center">
-        <button onclick="defendcenter() ">C</button>
+        <button onclick="moveballopponent();defendcenter() ">C</button>
       </div>
       <div class="df-ball-right ball df flex-center">
-        <button onclick="defendright();movegk('dfgkright') ">R</button>
+        <button onclick="moveballopponent();defendright();movegk('dfgkright') ">
+          R
+        </button>
       </div>
       <div class="df-gk df flex-center-column">
         <div></div>
