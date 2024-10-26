@@ -5,6 +5,7 @@ let opponent_random_defend = [];
 let opponent_random_attack = [];
 let opponentattackcount = 0;
 let opponentdefendcount = 0;
+let resultcountatkdf = 0;
 for (let i = 0; i < 5; i++) {
   const random = Math.floor(Math.random() * 3 + 1);
   opponent_random_attack.push(random);
@@ -13,7 +14,6 @@ for (let i = 0; i < 5; i++) {
   const random = Math.floor(Math.random() * 3 + 1);
   opponent_random_defend.push(random);
 }
-
 function atk_df_change() {
   let atkElements = document.getElementsByClassName("atk");
   let dfElements = document.getElementsByClassName("df");
@@ -29,6 +29,7 @@ function atk_df_change() {
   switch_df_atk = !switch_df_atk;
 }
 console.log(opponent_random_defend);
+console.log("============");
 console.log(opponent_random_attack);
 //1 :왼 2: 가 3: 오
 let count_attack = 0;
@@ -242,7 +243,7 @@ function result_compute(my_score, opponent_score) {
       resultinfo("lose");
     } else if (my_sum > opponent_sum + 5 - my_score.length) {
       resultinfo("win");
-    }
+    } else return 0;
   }
 }
 function resultinfo(result) {
