@@ -40,11 +40,45 @@
     </main>
   </body>
   <script>
-    const words = ["가", "나", "다", "라", "마", "바", "사"];
-
-    const mainWord = document.querySelector(".main-word");
-    const form = document.querySelector("form");
-    const text = document.querySelector("#main-text");
+    const words = [
+      "사람",
+      "시간",
+      "공기",
+      "사랑",
+      "바다",
+      "나무",
+      "산",
+      "별",
+      "도시",
+      "음식",
+      "꿈",
+      "가족",
+      "친구",
+      "책",
+      "뵑뵒뵔뵓",
+      "뵑뵒뵔뵓",
+      "뵑뵒뵔뵓",
+      "뵑뵒뵔뵓",
+      "뵑뵒뵔뵓",
+      "강아지",
+      "고양이",
+      "집",
+      "손",
+      "마음",
+      "길",
+      "학교",
+      "선생님",
+      "학생",
+      "자동차",
+      "컴퓨터",
+      "강",
+      "꽃",
+      "음악",
+      "영화",
+      "이야기",
+      "의자",
+      "우산",
+    ];
     const hpul = document.querySelector(".main-hp-ul");
     let hpcount = 3;
     let sec = 100;
@@ -85,6 +119,8 @@
 
     setInnerText();
     setInterval(countTimer, 1000);
+    setInterval((level -= 500), 20000);
+    setInterval(RemoveHp, level);
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
