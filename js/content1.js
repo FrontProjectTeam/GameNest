@@ -254,3 +254,8 @@ function resultinfo(result) {
     document.getElementsByClassName("result")[0].innerHTML = "youLose";
   }
 }
+function info_atk_df() {
+  switch_df_atk
+    ? (document.getElementsByClassName("atk-or-df")[0].innerHTML = "attack")
+    : (document.getElementsByClassName("atk-or-df")[0].innerHTML = "defend");
+}

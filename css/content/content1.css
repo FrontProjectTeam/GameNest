@@ -141,6 +141,17 @@ main {
   height: 50px;
   background-color: black;
   border-radius: 50%;
+  position: relative;
+}
+.atk-or-df {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background-color: green;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0.1;
+  font-size: 200px;
 }
 .df-ball-center > button {
   width: 50px;

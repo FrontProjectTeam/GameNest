@@ -58,7 +58,9 @@
           R
         </button>
       </div>
-      <div class="ball-center ball flex-center"><div></div></div>
+      <div class="ball-center ball flex-center">
+        <div><div class="atk-or-df flex-center">attack</div></div>
+      </div>
       <div class="df-ball-left ball df flex-center">
         <button onclick="moveballopponent();defendleft();movegk('dfgkleft')">
           L
@@ -80,7 +82,7 @@
 
     <div class="next-button">
       <button
-        onclick="  result_compute(my_score,opponent_score); atk_df_change() ;result_show()"
+        onclick="  result_compute(my_score,opponent_score); atk_df_change() ;result_show();info_atk_df()"
       >
         next
       </button>
