@@ -93,6 +93,8 @@ main {
   height: 50px;
   background-color: black;
   border-radius: 50%;
+  position: relative;
+  z-index: 0;
 }
 
 .atk-ball-center {
@@ -103,6 +105,8 @@ main {
   height: 50px;
   background-color: green;
   border-radius: 50%;
+  position: relative;
+  z-index: 0;
 }
 
 .atk-ball-right {
@@ -113,6 +117,8 @@ main {
   height: 50px;
   background-color: green;
   border-radius: 50%;
+  position: relative;
+  z-index: 0;
 }
 .ball-center {
   grid-area: gc;
@@ -122,6 +128,8 @@ main {
   height: 50px;
   background-color: green;
   border-radius: 50%;
+  position: relative;
+  z-index: 0;
 }
 
 .df-ball-left {
@@ -132,6 +140,8 @@ main {
   height: 50px;
   background-color: green;
   border-radius: 50%;
+  position: relative;
+  z-index: 0;
 }
 .df-ball-center {
   grid-area: dbc;
@@ -169,6 +179,8 @@ main {
   height: 50px;
   background-color: green;
   border-radius: 50%;
+  position: relative;
+  z-index: 0;
 }
 
 .df-gk {
@@ -191,12 +203,16 @@ main {
 
 .next-button {
   position: relative;
+  position: relative;
+  z-index: 0;
 }
 .next-button > button {
   position: absolute;
   right: 20px;
   width: 100px;
   height: 20px;
+  position: relative;
+  z-index: 0;
 }
 .ball-center {
   transition: transform 2s;
