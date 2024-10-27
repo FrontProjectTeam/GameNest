@@ -1,16 +1,16 @@
-const music = document.getElementById("backgroundMusic");
-const playButton = document.getElementById("playButton");
+// const music = document.getElementById("backgroundMusic");
+// const playButton = document.getElementById("playButton");
 
-music
-  .play()
-  .then(() => {})
-  .catch(() => {
-    playButton.style.display = "block";
-    playButton.addEventListener("click", function () {
-      music.play();
-      playButton.style.display = "none"; // 音乐播放后隐藏按钮
-    });
-  });
+// music
+//   .play()
+//   .then(() => {})
+//   .catch(() => {
+//     playButton.style.display = "block";
+//     playButton.addEventListener("click", function () {
+//       music.play();
+//       playButton.style.display = "none"; // 音乐播放后隐藏按钮
+//     });
+//   });
 // 生成 1 到 100 的随机数
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 let turns = 0;
