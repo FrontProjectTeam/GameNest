@@ -1,110 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./js/content1.js"></script>
-    <link rel="stylesheet" href="./css/content/content1.css" />
-  </head>
-  <body>
-    <div class="result-wrapper flex-center">
-      <div class="result flex-center">result</div>
-    </div>
-    <div class="score-wrapper-w">
-      <div class="score-wrapper">
-        <section class="score-my">
-          <div>myscore</div>
-          <div class="score-my-count">
-            <div class="score-my-count-first">1</div>
-            <div class="score-my-count-second">2</div>
-            <div class="score-my-count-third">3</div>
-            <div class="score-my-count-fourth">4</div>
-            <div class="score-my-count-fifth">5</div>
-          </div>
-        </section>
+<div class="content1">
+  <div class="result-wrapper flex-center">
+    <div class="result flex-center">result</div>
+  </div>
+  <div class="score-wrapper-w">
+    <div class="score-wrapper">
+      <section class="score-my">
+        <div>myscore</div>
+        <div class="score-my-count">
+          <div class="score-my-count-first">1</div>
+          <div class="score-my-count-second">2</div>
+          <div class="score-my-count-third">3</div>
+          <div class="score-my-count-fourth">4</div>
+          <div class="score-my-count-fifth">5</div>
+        </div>
+      </section>
 
-        <section class="score-opponent">
-          <div>opponentscore</div>
-          <div class="score-opponent-count">
-            <div class="score-opponent-count-first">1</div>
-            <div class="score-opponent-count-second">2</div>
-            <div class="score-opponent-count-third">3</div>
-            <div class="score-opponent-count-fourth">4</div>
-            <div class="score-opponent-count-fifth">5</div>
-          </div>
-        </section>
-      </div>
+      <section class="score-opponent">
+        <div>opponentscore</div>
+        <div class="score-opponent-count">
+          <div class="score-opponent-count-first">1</div>
+          <div class="score-opponent-count-second">2</div>
+          <div class="score-opponent-count-third">3</div>
+          <div class="score-opponent-count-fourth">4</div>
+          <div class="score-opponent-count-fifth">5</div>
+        </div>
+      </section>
     </div>
-    <main>
-      <div class="atk-gk atk flex-center-column">
-        <section class="atk-goal-post"></section>
-        <div></div>
-      </div>
-      <div class="atk-ball-left ball atk flex-center">
-        <button
-          class="switchbutton"
-          onclick="attackleft() ;moveball('atkleft');movegkopponent(); btdisable() "
-        >
-          L
-        </button>
-      </div>
-      <div class="atk-ball-center ball atk flex-center">
-        <button
-          class="switchbutton"
-          onclick="attackcenter();moveball('atkcenter');movegkopponent() ; btdisable()"
-        >
-          C
-        </button>
-      </div>
-      <div class="atk-ball-right ball atk flex-center">
-        <button
-          class="switchbutton"
-          onclick=" attackright();moveball('atkright');movegkopponent() ; btdisable()"
-        >
-          R
-        </button>
-      </div>
-      <div class="ball-center ball flex-center">
-        <div><div class="atk-or-df flex-center">attack</div></div>
-      </div>
-      <div class="df-ball-left ball df flex-center">
-        <button
-          class="switchbutton"
-          onclick="moveballopponent();defendleft();movegk('dfgkleft'); btdisable()"
-        >
-          L
-        </button>
-      </div>
-      <div class="df-ball-center ball df flex-center">
-        <button
-          class="switchbutton"
-          onclick="moveballopponent();defendcenter(); btdisable()"
-        >
-          C
-        </button>
-      </div>
-      <div class="df-ball-right ball df flex-center">
-        <button
-          class="switchbutton"
-          onclick="moveballopponent();defendright();movegk('dfgkright'); btdisable() "
-        >
-          R
-        </button>
-      </div>
-      <div class="df-gk df flex-center-column">
-        <div></div>
-        <section class="df-goal-post"></section>
-      </div>
-    </main>
-
-    <div class="next-button">
+  </div>
+  <main>
+    <div class="atk-gk atk flex-center-column">
+      <section class="atk-goal-post flex-center">goalpost</section>
+      <div></div>
+    </div>
+    <div class="atk-ball-left ball atk flex-center">
       <button
-        class="next-button-switch"
-        onclick=" result_compute(my_score,opponent_score); atk_df_change() ;result_show();info_atk_df(); btable();"
+        class="switchbutton"
+        onclick="attackleft() ;moveball('atkleft');movegkopponent(); btdisable() "
+      ></button>
+    </div>
+    <div class="atk-ball-center ball atk flex-center">
+      <button
+        class="switchbutton"
+        onclick="attackcenter();moveball('atkcenter');movegkopponent() ; btdisable()"
       >
-        next
+        C
       </button>
     </div>
-  </body>
-</html>
+    <div class="atk-ball-right ball atk flex-center">
+      <button
+        class="switchbutton"
+        onclick=" attackright();moveball('atkright');movegkopponent() ; btdisable()"
+      >
+        R
+      </button>
+    </div>
+    <div class="ball-center ball flex-center">
+      <div><div class="atk-or-df flex-center">attack</div></div>
+    </div>
+    <div class="df-ball-left ball df flex-center">
+      <button
+        class="switchbutton"
+        onclick="moveballopponent();defendleft();movegk('dfgkleft'); btdisable()"
+      >
+        L
+      </button>
+    </div>
+    <div class="df-ball-center ball df flex-center">
+      <button
+        class="switchbutton"
+        onclick="moveballopponent();defendcenter(); btdisable()"
+      >
+        C
+      </button>
+    </div>
+    <div class="df-ball-right ball df flex-center">
+      <button
+        class="switchbutton"
+        onclick="moveballopponent();defendright();movegk('dfgkright'); btdisable() "
+      >
+        R
+      </button>
+    </div>
+    <div class="df-gk df flex-center-column">
+      <div></div>
+      <section class="df-goal-post flex-center">goalpost</section>
+    </div>
+  </main>
+
+  <div class="next-button">
+    <button
+      class="next-button-switch"
+      onclick=" result_compute(my_score,opponent_score); atk_df_change() ;result_show();info_atk_df(); btable();"
+    >
+      next
+    </button>
+  </div>
+</div>
