@@ -1,4 +1,4 @@
-.main_body .content2 {
+.main_body.content2 {
   position: relative; /* 确保子元素绝对定位时基于此容器 */
   margin: 0 auto;
   padding: 0;
@@ -17,7 +17,7 @@
   width: 900px;
   height: 700px;
   overflow: hidden; /* 隐藏多余部分 */
-  z-index: -1;
+  z-index: 0;
 }
 
 .content2 #bg-video {
@@ -25,17 +25,16 @@
   object-fit: cover;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+
+  width: inherit;
+  height: inherit;
   transform: translate(-50%, -50%); /* 使视频居中 */
-  z-index: -1; /* 确保视频位于背景层 */
+  z-index: 0; /* 确保视频位于背景层 */
 }
 
 .content2 .overlay-content {
   position: absolute; /* 绝对定位内容 */
-  top: 30%; /* 垂直居中 */
+  top: 50%; /* 垂直居中 */
   left: 50%; /* 水平居中 */
   transform: translate(-50%, -50%); /* 调整位置以真正居中 */
   color: white; /* 设置文本颜色以便在视频上可见 */
@@ -265,8 +264,8 @@
   transform: scale(1.25);
 }
 
-/* .modal .content2 {
-  display: inline;
+.modal.content2-modal {
+  display: none;
   position: fixed;
   z-index: 3;
   top: 0;
@@ -274,7 +273,7 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.content2 .modal-content {
+.content2-modal .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
@@ -282,22 +281,23 @@
   border-radius: 15%;
   width: 300px;
   text-align: center;
+  min-height: auto;
+  height: 360px;
 }
 
-.content2 .close {
+.content2-modal .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
-} */
-
-/* .content2 .close:hover,
-.content2.close:focus {
+}
+.content2-modal .close:hover,
+.content2-modal .close:focus {
   color: black;
   cursor: pointer;
 }
 
-.content2 .count_style {
+.content2-modal .count_style {
   color: brown;
   font-size: 25px;
-} */
+}

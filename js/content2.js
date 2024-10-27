@@ -1,17 +1,3 @@
-// const music = document.getElementById("backgroundMusic");
-// const playButton = document.getElementById("playButton");
-
-// music
-//   .play()
-//   .then(() => {})
-//   .catch(() => {
-//     playButton.style.display = "block";
-//     playButton.addEventListener("click", function () {
-//       music.play();
-//       playButton.style.display = "none"; // 音乐播放后隐藏按钮
-//     });
-//   });
-// 生成 1 到 100 的随机数
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 let turns = 0;
 let min = 1;
@@ -19,8 +5,12 @@ let max = 100;
 
 function checkGuess() {
   // 获取用户输入的数字
-  const guess = parseInt(document.getElementById("guess-input").value);
-  if (isNaN(guess) || guess <= min || guess >= max) {
+
+  if (
+    isNaN(parseInt(document.getElementById("guess-input").value)) ||
+    parseInt(document.getElementById("guess-input").value) <= min ||
+    parseInt(document.getElementById("guess-input").value) >= max
+  ) {
     clearInput();
     //alert("Please enter a number between " + min + " and " + max);
     return;
@@ -30,28 +20,25 @@ function checkGuess() {
   turns++;
   document.getElementById("turns").textContent = turns;
 
-  if (guess < randomNumber) {
-    min = guess;
+  if (parseInt(document.getElementById("guess-input").value) < randomNumber) {
+    min = parseInt(document.getElementById("guess-input").value);
     document.getElementById("min-value").innerHTML = `<h1>${min}</h1>`;
-  } else if (guess > randomNumber) {
-    max = guess;
+  } else if (
+    parseInt(document.getElementById("guess-input").value) > randomNumber
+  ) {
+    max = parseInt(document.getElementById("guess-input").value);
     document.getElementById("max-value").innerHTML = `<h1>${max}</h1>`;
   } else {
-    fetch("guessnumber_modal.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.body.insertAdjacentHTML("beforeend", data);
-        document.getElementById("modal").style.display = "block";
-        document.getElementById("turns-count").innerText = turns;
-        document.querySelector(".close").addEventListener("click", closeModal);
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("turns-count").innerText = turns;
+    document.querySelector(".close").addEventListener("click", closeModal);
 
-        function closeModal() {
-          document.getElementById("modal").style.display = "none";
-          document.getElementById("modal").remove();
-        }
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+      document.getElementById("modal").remove();
+    }
 
-        resetGame();
-      });
+    resetGame();
   }
   clearInput();
 }
@@ -71,9 +58,12 @@ function clearInput() {
 }
 
 function appendNumber(number) {
-  const inputField = document.getElementById("guess-input");
-
-  if (inputField.value.length < 2) {
-    inputField.value = inputField.value + number;
+  if (document.getElementById("guess-input").value.length < 2) {
+    document.getElementById("guess-input").value =
+      document.getElementById("guess-input").value + number;
   }
+}
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+  document.getElementById("modal").remove();
 }
