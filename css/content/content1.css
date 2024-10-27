@@ -203,16 +203,12 @@ main {
 
 .next-button {
   position: relative;
-  position: relative;
-  z-index: 0;
 }
 .next-button > button {
   position: absolute;
   right: 20px;
   width: 100px;
   height: 20px;
-  position: relative;
-  z-index: 0;
 }
 .ball-center {
   transition: transform 2s;
