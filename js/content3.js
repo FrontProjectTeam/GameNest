@@ -1130,6 +1130,8 @@
         .appendChild(playerImages);
       document.querySelector(".content3-footer-container").appendChild(input);
 
+      input.focus();
+
       input.addEventListener("keydown", function (event) {
         if (event.key == "Enter") {
           checkAnswer(input.value, players[randomIndex].answer);
@@ -1172,11 +1174,15 @@
     document.querySelector(".content3-footer-container").innerHTML = "";
 
     let scoreBoard = document.createElement("p");
+    scoreBoard.style.height = "400px";
+    scoreBoard.className = "content3-p";
+
     document.querySelector(".content3-main-container").appendChild(scoreBoard);
-    scoreBoard.textContent = `퀴즈종료! 당신의 점수는 ${score} / ${totalNumberOfQuiz}`;
+    scoreBoard.innerHTML = `퀴즈종료! 당신의 점수는 </br> ${score} / ${totalNumberOfQuiz}`;
 
     let returnBtn = document.createElement("button");
     returnBtn.textContent = "돌아가기";
+    returnBtn.className = "content3-btn-color-white btn";
     document.querySelector(".content3-footer-container").appendChild(returnBtn);
 
     returnBtn.addEventListener("click", function (event) {

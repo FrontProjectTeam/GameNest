@@ -52,8 +52,8 @@
 
 .content3-footer {
   background-color: #100b2f;
-  width: 100%;
-  height: 200px;
+  width: 1290px;
+  height: 260px;
   display: flex;
   justify-content: center;
 }
@@ -90,5 +90,14 @@
 .content3-input {
   width: 500px;
   padding: 12px 24px;
+  text-align: center;
+}
+
+.content3-p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
   text-align: center;
 }
