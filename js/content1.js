@@ -6,13 +6,16 @@ let opponent_random_attack = [];
 let opponentattackcount = 0;
 let opponentdefendcount = 0;
 let resultcountatkdf = 0;
-for (let i = 0; i < 5; i++) {
-  const random = Math.floor(Math.random() * 3 + 1);
-  opponent_random_attack.push(random);
-}
-for (let i = 0; i < 5; i++) {
-  const random = Math.floor(Math.random() * 3 + 1);
-  opponent_random_defend.push(random);
+
+function makeopponentrandom() {
+  for (let i = 0; i < 5; i++) {
+    const random = Math.floor(Math.random() * 3 + 1);
+    opponent_random_attack.push(random);
+  }
+  for (let i = 0; i < 5; i++) {
+    const random = Math.floor(Math.random() * 3 + 1);
+    opponent_random_defend.push(random);
+  }
 }
 function atk_df_change() {
   let atkElements = document.getElementsByClassName("atk");
@@ -39,28 +42,16 @@ let count_defend = 0;
 //   }
 
 function my_moving() {}
-function attackleft() {
-  my_score.push(opponent_random_defend[count_attack++] === 1 ? "X" : "O");
+function attack(direction) {
+  my_score.push(
+    opponent_random_defend[count_attack++] === direction ? "X" : "O"
+  );
 }
 
-function attackcenter() {
-  my_score.push(opponent_random_defend[count_attack++] === 2 ? "X" : "O");
-}
-
-function attackright() {
-  my_score.push(opponent_random_defend[count_attack++] === 3 ? "X" : "O");
-}
-
-function defendleft() {
-  opponent_score.push(opponent_random_attack[count_defend++] === 1 ? "X" : "O");
-}
-
-function defendcenter() {
-  opponent_score.push(opponent_random_attack[count_defend++] === 2 ? "X" : "O");
-}
-
-function defendright() {
-  opponent_score.push(opponent_random_attack[count_defend++] === 3 ? "X" : "O");
+function defend(direction) {
+  opponent_score.push(
+    opponent_random_attack[count_defend++] === direction ? "X" : "O"
+  );
 }
 
 function result_show() {
@@ -243,16 +234,25 @@ function result_compute(my_score, opponent_score) {
       resultinfo("lose");
     } else if (my_sum > opponent_sum + 5 - my_score.length) {
       resultinfo("win");
-    } else return 0;
+    } else if (my_score.length + opponent_score.length === 10) {
+      reset();
+    }
   }
 }
+
 function resultinfo(result) {
   document.getElementsByClassName("result")[0].style.opacity = 1;
 
   if (result === "win") {
     document.getElementsByClassName("result")[0].innerHTML = "youWIn";
-  } else {
+
+    document.querySelector("next-button-switch").disabled = true;
+  } else if (result === "lose") {
     document.getElementsByClassName("result")[0].innerHTML = "youLose";
+
+    document.querySelector("next-button-switch").disabled = true;
+  } else if ((my_score.length + opponent_score.length) % 10 === 0) {
+    reset();
   }
 }
 function info_atk_df() {
@@ -261,18 +261,72 @@ function info_atk_df() {
     : (document.getElementsByClassName("atk-or-df")[0].innerHTML = "defend");
 }
 function btdisable() {
-  const bt = document.querySelectorAll(".switchbutton");
   bt.forEach((button) => {
     button.disabled = true;
   });
-  const nextbt = document.querySelector(".next-button-switch");
+
   nextbt.disabled = false;
 }
+const bt = document.querySelectorAll(".switchbutton");
+const nextbt = document.querySelector(".next-button-switch");
+nextbt.disabled = true;
 function btable() {
-  const bt = document.querySelectorAll(".switchbutton");
   bt.forEach((button) => {
     button.disabled = false;
   });
-  const nextbt = document.querySelector(".next-button-switch");
   nextbt.disabled = true;
+}
+function reset() {
+  switch_df_atk = true;
+  my_score = [];
+  opponent_score = [];
+  opponent_random_defend = [];
+  opponent_random_attack = [];
+  makeopponentrandom();
+  opponentattackcount = 0;
+  opponentdefendcount = 0;
+  resultcountatkdf = 0;
+
+  document.getElementsByClassName("score-my-count-first")[0].innerHTML = 1;
+  document.getElementsByClassName("score-my-count-second")[0].innerHTML = 2;
+  document.getElementsByClassName("score-my-count-third")[0].innerHTML = 3;
+  document.getElementsByClassName("score-my-count-fourth")[0].innerHTML = 4;
+  document.getElementsByClassName("score-my-count-fifth")[0].innerHTML = 5;
+
+  document.getElementsByClassName(
+    "score-opponent-count-first"
+  )[0].innerHTML = 1;
+  document.getElementsByClassName(
+    "score-opponent-count-second"
+  )[0].innerHTML = 2;
+  document.getElementsByClassName(
+    "score-opponent-count-third"
+  )[0].innerHTML = 3;
+  document.getElementsByClassName(
+    "score-opponent-count-fourth"
+  )[0].innerHTML = 4;
+  document.getElementsByClassName(
+    "score-opponent-count-fifth"
+  )[0].innerHTML = 5;
+
+  atkElements = document.getElementsByClassName("atk");
+  dfElements = document.getElementsByClassName("df");
+
+  for (let i = 0; i < atkElements.length; i++) {
+    atkElements[i].style.opacity = switch_df_atk ? 1 : 0;
+  }
+
+  for (let i = 0; i < dfElements.length; i++) {
+    dfElements[i].style.opacity = switch_df_atk ? 0 : 1;
+  }
+  switch_df_atk
+    ? (document.getElementsByClassName("atk-or-df")[0].innerHTML = "attack")
+    : (document.getElementsByClassName("atk-or-df")[0].innerHTML = "defend");
+  document.getElementsByClassName("result")[0].style.opacity = 0;
+  btable();
+}
+
+function startbtnDisabled() {
+  const target = document.getElementsByClassName("start")[0];
+  target.disabled = true;
 }

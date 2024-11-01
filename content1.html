@@ -35,13 +35,15 @@
     <div class="atk-ball-left ball atk flex-center">
       <button
         class="switchbutton"
-        onclick="attackleft() ;moveball('atkleft');movegkopponent(); btdisable() "
-      ></button>
+        onclick="attack(1) ;moveball('atkleft');movegkopponent(); btdisable() "
+      >
+        L
+      </button>
     </div>
     <div class="atk-ball-center ball atk flex-center">
       <button
         class="switchbutton"
-        onclick="attackcenter();moveball('atkcenter');movegkopponent() ; btdisable()"
+        onclick="attack(2);moveball('atkcenter');movegkopponent() ; btdisable()"
       >
         C
       </button>
@@ -49,7 +51,7 @@
     <div class="atk-ball-right ball atk flex-center">
       <button
         class="switchbutton"
-        onclick=" attackright();moveball('atkright');movegkopponent() ; btdisable()"
+        onclick=" attack(3);moveball('atkright');movegkopponent() ; btdisable()"
       >
         R
       </button>
@@ -60,7 +62,7 @@
     <div class="df-ball-left ball df flex-center">
       <button
         class="switchbutton"
-        onclick="moveballopponent();defendleft();movegk('dfgkleft'); btdisable()"
+        onclick="moveballopponent();defend(1);movegk('dfgkleft'); btdisable()"
       >
         L
       </button>
@@ -68,7 +70,7 @@
     <div class="df-ball-center ball df flex-center">
       <button
         class="switchbutton"
-        onclick="moveballopponent();defendcenter(); btdisable()"
+        onclick="moveballopponent();defend(2); btdisable()"
       >
         C
       </button>
@@ -76,7 +78,7 @@
     <div class="df-ball-right ball df flex-center">
       <button
         class="switchbutton"
-        onclick="moveballopponent();defendright();movegk('dfgkright'); btdisable() "
+        onclick="moveballopponent();defend(3);movegk('dfgkright'); btdisable() "
       >
         R
       </button>
@@ -87,12 +89,16 @@
     </div>
   </main>
 
-  <div class="next-button">
+  <div class="buttons">
+    <button class="start" onclick=" makeopponentrandom(); startbtnDisabled()">
+      start
+    </button>
     <button
-      class="next-button-switch"
+      class="next-button-switch flex-center"
       onclick=" result_compute(my_score,opponent_score); atk_df_change() ;result_show();info_atk_df(); btable();"
     >
       next
     </button>
+    <button class="reset-btn" onclick="reset()">new game</button>
   </div>
 </div>

@@ -94,22 +94,13 @@
   grid-area: abl;
 }
 
-.content1 .atk-ball-left > button {
-  width: 50px;
-  height: 50px;
-  background-color: black;
-  border-radius: 50%;
-  position: relative;
-  z-index: 0;
-}
-
 .content1 .atk-ball-center {
   grid-area: abc;
 }
 .content1 .atk-ball-center > button {
   width: 50px;
   height: 50px;
-  background-color: green;
+  background-color: antiquewhite;
   border-radius: 50%;
   position: relative;
   z-index: 0;
@@ -121,7 +112,7 @@
 .content1 .atk-ball-right > button {
   width: 50px;
   height: 50px;
-  background-color: green;
+  background-color: antiquewhite;
   border-radius: 50%;
   position: relative;
   z-index: 0;
@@ -132,7 +123,7 @@
 .content1 .atk-ball-left > button {
   width: 50px;
   height: 50px;
-  background-color: green;
+  background-color: antiquewhite;
   border-radius: 50%;
   position: relative;
   z-index: 0;
@@ -144,7 +135,7 @@
 .content1 .df-ball-left > button {
   width: 50px;
   height: 50px;
-  background-color: green;
+  background-color: antiquewhite;
   border-radius: 50%;
   position: relative;
   z-index: 0;
@@ -172,7 +163,7 @@
 .content1 .df-ball-center > button {
   width: 50px;
   height: 50px;
-  background-color: green;
+  background-color: antiquewhite;
   border-radius: 50%;
   position: relative;
   z-index: 0;
@@ -183,7 +174,7 @@
 .content1 .df-ball-right > button {
   width: 50px;
   height: 50px;
-  background-color: green;
+  background-color: antiquewhite;
   border-radius: 50%;
   position: relative;
   z-index: 0;
@@ -207,15 +198,32 @@
   height: 30px;
 }
 
-.content1 .next-button {
+.content1 .buttons > .start {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  width: 100px;
+  height: 20px;
+}
+.content1 .buttons {
   position: relative;
 }
-.content1 .next-button > button {
+.content1 .buttons > .next-button-switch {
   position: absolute;
   right: 20px;
   bottom: 0px;
   width: 100px;
   height: 20px;
+  top: 30px;
+}
+
+.content1 .buttons > .reset-btn {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  width: 100px;
+  height: 20px;
+  top: 60px;
 }
 .content1 .ball-center {
   transition: transform 2s;
