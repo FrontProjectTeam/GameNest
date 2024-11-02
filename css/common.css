@@ -48,6 +48,8 @@ input::-webkit-search-results-decoration {
   border: 0;
   font-size: 16px;
   color: #0d0529;
+  border-radius: 8px;
+  outline: none;
 }
 .btn-modal-close {
   width: 36px;
