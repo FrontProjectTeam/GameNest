@@ -30,9 +30,9 @@
 
       async function importScr(target) {
         const response = await fetch(`./js/${target}.js`);
-        console.log(response);
         if (response.ok) {
           const scriptEl = document.createElement("script");
+          scriptEl.className = "scrControl";
           scriptEl.defer = true;
           scriptEl.src = `./js/${target}.js`;
           document.head.appendChild(scriptEl);
@@ -43,77 +43,71 @@
 
       // body 태그 로드 후 동작
       window.onload = function () {
+        const sideNav = document.querySelectorAll(".index-nav-item-a");
         // 페이지 로고 클릭시 보드 숨김
         document
           .querySelector("#index-icon-a")
           .addEventListener("click", function () {
             hideGameBoard();
+            stopTimer();
+            sideNav.forEach((el) => {
+              el.style.display = "flex";
+            });
           });
 
         // 좌측 메뉴 클릭 시 보드 세팅
-        document
-          .querySelectorAll(".index-nav-item-a")
-          .forEach((element, index, array) => {
-            element.addEventListener("click", function () {
-              importPage(element.dataset.content);
-              console.log("클릭");
-              importPage(element.dataset.content);
-              const content = element.dataset.content;
-              console.log(content);
-              setTimeout(() => {
-                const targetElement = document.querySelector(`.${content}`);
-                if (targetElement) {
-                  console.log("요소를 찾았습니다:", targetElement);
-                  importScr(element.dataset.content);
-                } else {
-                  console.log("요소를 찾을 수 없습니다.");
-                }
-              }, 3000);
+
+        sideNav.forEach((element, index, array) => {
+          element.addEventListener("click", function (e) {
+            sideNav.forEach((el) => {
+              if (el !== e.target) {
+                el.style.display = "flex";
+              }
             });
+            const content = element.dataset.content;
+            if (content !== "content5" && typeof stopTimer === "function") {
+              stopTimer();
+            }
+            const current = e.target;
+            current.style.display = "none";
+            importPage(content);
+            setSrc(content);
           });
+        });
 
         // 게임 클릭 시 보드 세팅
         document
           .querySelectorAll(".index-game-item")
           .forEach((element, index, array) => {
             element.addEventListener("click", function () {
-              console.log("클릭");
-              importPage(element.dataset.content);
               const content = element.dataset.content;
-              console.log(content);
-              setTimeout(() => {
-                const targetElement = document.querySelector(`.${content}`);
-                if (targetElement) {
-                  console.log("요소를 찾았습니다:", targetElement);
-                  importScr(element.dataset.content);
+              importPage(content);
+              setSrc(content);
+              sideNav.forEach((el) => {
+                if (el.dataset.content === content) {
+                  el.style.display = "none";
                 } else {
-                  console.log("요소를 찾을 수 없습니다.");
+                  el.style.display = "flex";
                 }
-              }, 3000);
+              });
             });
           });
       };
+      function setSrc(content) {
+        setTimeout(() => {
+          const targetElement = document.querySelector(`.${content}`);
+          if (targetElement) {
+            console.log("요소를 찾았습니다:", targetElement);
+            importScr(content);
+          }
+        }, 2000);
+      }
     </script>
   </head>
 
   <body class="index-body">
     <header class="index-header" id="index-header">
       <div class="index-header-left">
-        <button class="index-menu-toggle-btn">
-          <svg
-            viewBox="0 0 24 24"
-            focusable="false"
-            aria-hidden="true"
-            class="css-6qu7l6"
-          >
-            <path
-              xmlns="http://www.w3.org/2000/svg"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M19 4C19.5523 4 20 3.55229 20 3C20 2.44772 19.5523 2 19 2L3 2C2.44772 2 2 2.44772 2 3C2 3.55228 2.44772 4 3 4L19 4ZM20.47 7.95628L15.3568 11.152C14.7301 11.5437 14.7301 12.4564 15.3568 12.848L20.47 16.0438C21.136 16.4601 22 15.9812 22 15.1958V8.80427C22 8.01884 21.136 7.54 20.47 7.95628ZM11 13C11.5523 13 12 12.5523 12 12C12 11.4477 11.5523 11 11 11L3 11C2.44771 11 2 11.4477 2 12C2 12.5523 2.44771 13 3 13L11 13ZM20 21C20 21.5523 19.5523 22 19 22L3 22C2.44771 22 2 21.5523 2 21C2 20.4477 2.44771 20 3 20L19 20C19.5523 20 20 20.4477 20 21Z"
-            ></path>
-          </svg>
-        </button>
         <a id="index-icon-a">
           <div class="index-icons">
             <div class="index-icon">

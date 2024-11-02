@@ -42,6 +42,7 @@ input::-webkit-search-results-decoration {
 
 /* 기본 공통 button */
 .btn {
+  cursor: pointer;
   width: 112px;
   height: 44px;
   background-color: #48e86c;

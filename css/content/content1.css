@@ -201,9 +201,7 @@
 .content1 .buttons > .start {
   position: absolute;
   right: 20px;
-  top: 0px;
-  width: 100px;
-  height: 20px;
+  top: -54px;
 }
 .content1 .buttons {
   position: relative;
@@ -211,19 +209,12 @@
 .content1 .buttons > .next-button-switch {
   position: absolute;
   right: 20px;
-  bottom: 0px;
-  width: 100px;
-  height: 20px;
-  top: 30px;
 }
 
 .content1 .buttons > .reset-btn {
   position: absolute;
   right: 20px;
-  top: 0px;
-  width: 100px;
-  height: 20px;
-  top: 60px;
+  top: 54px;
 }
 .content1 .ball-center {
   transition: transform 2s;

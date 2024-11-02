@@ -90,15 +90,18 @@
   </main>
 
   <div class="buttons">
-    <button class="start" onclick=" makeopponentrandom(); startbtnDisabled()">
+    <button
+      class="start btn"
+      onclick=" makeopponentrandom(); startbtnDisabled()"
+    >
       start
     </button>
     <button
-      class="next-button-switch flex-center"
+      class="next-button-switch flex-center btn"
       onclick=" result_compute(my_score,opponent_score); atk_df_change() ;result_show();info_atk_df(); btable();"
     >
       next
     </button>
-    <button class="reset-btn" onclick="reset()">new game</button>
+    <button class="reset-btn btn" onclick="reset()">new game</button>
   </div>
 </div>

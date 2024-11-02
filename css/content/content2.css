@@ -2,19 +2,18 @@
   position: relative; /* 确保子元素绝对定位时基于此容器 */
   margin: 0 auto;
   padding: 0;
+  width: 100%;
   border: 1px solid #000;
   box-sizing: border-box;
   overflow: hidden; /* 防止溢出内容影响布局 */
 }
 
 .content2 .main-inner {
-  width: 900px;
   height: 700px;
 }
 
 .content2 .video-background {
   position: relative; /* 让视频固定在背景 */
-  width: 900px;
   height: 700px;
   overflow: hidden; /* 隐藏多余部分 */
   z-index: 0;
