@@ -32,7 +32,7 @@
       <div id="main-text-center">
         <div id="main-text-range">
           <p id="main-text-p">입력:</p>
-          <form>
+          <form class="contect5form">
             <input type="text" id="main-text" />
           </form>
         </div>
@@ -80,17 +80,15 @@
       "우산",
     ];
 
-    const mainWord = document.querySelector(".main-word");
-    const form = document.querySelector("form");
-    const text = document.querySelector("#main-text");
-    const hpul = document.querySelector(".main-hp-ul");
     let hpcount = 3;
     let sec = 100;
     let level = 3000;
 
+    let random = words[Math.floor(Math.random() * words.length)];
+
     function setInnerText() {
-      let random = words[Math.floor(Math.random() * words.length)];
-      mainWord.innerText = random;
+      random = words[Math.floor(Math.random() * words.length)];
+      document.querySelector(".main-word").innerText = random;
       console.log("바뀜");
       console.log(random);
     }
@@ -102,7 +100,7 @@
       hpcount++;
       newli.id = "hp" + hpcount;
       newli.appendChild(newtext);
-      hpul.appendChild(newli);
+      document.querySelector(".main-hp-ul").appendChild(newli);
     }
 
     function RemoveHp() {
@@ -110,6 +108,13 @@
       console.log(removeli);
       hpcount--;
       removeli.remove();
+      if (hpcount == 0) {
+        setTimeout(() => {
+          alert("GameOver");
+
+          location.reload();
+        }, 100);
+      }
     }
     function countTimer() {
       if (sec !== 0) {
@@ -125,24 +130,30 @@
     setInterval(countTimer, 1000);
     setInterval(RemoveHp, 3000);
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      let userText = text.value;
+    document
+      .querySelector(".contect5form")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        let userText = document.querySelector("#main-text").value;
 
-      if (mainWord.innerText === userText) {
-        console.log("같음");
-        setInnerText();
-        CreateHp();
-      } else {
-        console.log("다름");
-        RemoveHp();
-      }
-      console.log(hpcount);
+        if (random === userText) {
+          console.log("같음");
+          setInnerText();
+          CreateHp();
+        } else {
+          console.log("다름");
+          RemoveHp();
+        }
+        console.log(hpcount);
+
+        document.querySelector("#main-text").value = "";
+      });
+
+    function GameOver() {
       if (hpcount == 0) {
         console.log("GameOver");
         location.reload(true);
       }
-      text.value = "";
-    });
+    }
   </script>
 </html>
