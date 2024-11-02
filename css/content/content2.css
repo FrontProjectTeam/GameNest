@@ -1,0 +1,303 @@
+.main_body.content2 {
+  position: relative; /* 确保子元素绝对定位时基于此容器 */
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  overflow: hidden; /* 防止溢出内容影响布局 */
+}
+
+.content2 .main-inner {
+  width: 900px;
+  height: 700px;
+}
+
+.content2 .video-background {
+  position: relative; /* 让视频固定在背景 */
+  width: 900px;
+  height: 700px;
+  overflow: hidden; /* 隐藏多余部分 */
+  z-index: 0;
+}
+
+.content2 #bg-video {
+  position: absolute;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+
+  width: inherit;
+  height: inherit;
+  transform: translate(-50%, -50%); /* 使视频居中 */
+  z-index: 0; /* 确保视频位于背景层 */
+}
+
+.content2 .overlay-content {
+  position: absolute; /* 绝对定位内容 */
+  top: 50%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -50%); /* 调整位置以真正居中 */
+  color: white; /* 设置文本颜色以便在视频上可见 */
+  z-index: 2; /* 确保内容在视频上方 */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .content2 .main_function_button_style_playmusic {
+  background-color: rgba(74, 66, 224, 0.993);
+  font-size: 15px;
+  border-radius: 4px;
+  border: none;
+  color: rgb(227, 236, 134);
+  cursor: pointer;
+} */
+
+.content2 .main_head-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+  list-style-type: none; /* 移除默认项目符号 */
+}
+
+.content2 .main_head_logo_rotate {
+  animation: rotateTwice 2s ease-in-out infinite;
+}
+
+@keyframes rotateTwice {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.content2 .main_head_logo_img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block; /* 부모 요소의 margin이 영향을 미치지 않도록 설정 */
+  opacity: 0.6;
+}
+
+.content2 .main_turns_button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 20px 0 20px 0;
+  list-style-type: none; /* 移除默认项目符号 */
+}
+
+.content2 .main_turns_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgba(
+    169,
+    217,
+    241,
+    0.8
+  ); /* Set background to transparent */
+  box-shadow: 0px 6px 0px 0px rgba(255, 255, 255, 0.8); /* Add a white line at the bottom */
+  color: rgb(0, 0, 0);
+}
+
+.content2 .main_show_button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+  list-style-type: none;
+}
+
+.content2 .main_show_button {
+  display: inline-block; /* Use flexbox */
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  padding: 10px; /* Add some padding inside the box */
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 45px solid rgba(224, 170, 226, 0.8);
+  font-size: 20px; /* Set font size to 20px */
+  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8);
+  color: rgb(232, 220, 90);
+}
+
+.content2 .main_show_input_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Add some padding inside the box */
+  width: 150px;
+  height: 120px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 45px solid rgba(80, 161, 202, 0.8);
+  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.content2 #guess-input {
+  display: flex;
+  justify-content: center;
+  background-color: transparent; /* 设置背景为透明 */
+  border: none; /* 移除边框 */
+  color: rgb(90, 240, 180);
+  font-size: 50px;
+  text-align: center; /* 让数字居中 */
+  outline: none; /* 移除选中时的轮廓 */
+}
+
+.content2 .main_show_symbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Add some padding inside the box */
+  margin: 0; /* Remove default margin */
+  border: 2px solid transparent;
+  border-radius: 50%;
+  font-size: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(101, 228, 75, 0.8);
+  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8);
+  color: rgb(0, 0, 0);
+}
+.content2 .main_function_button-container {
+  display: flex; /* 覆盖默认的 display: block */
+  justify-content: center; /* 子元素居中对齐 */
+  align-items: center; /* 垂直方向居中对齐 */
+  padding: 0;
+  margin: 5cqmin 0 0 0;
+  gap: 35px;
+  list-style-type: none; /* 移除默认项目符号 */
+}
+
+.content2 .main_function_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 20px;
+  width: 80px;
+  height: 15px;
+  background-color: rgba(209, 186, 54, 0.8);
+  cursor: pointer;
+  box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.8);
+  color: rgb(0, 0, 0);
+}
+
+.content2 .main_function_button:hover {
+  transform: scale(1.15);
+}
+
+.content2 .main_function_button_style_reset {
+  background-color: rgba(163, 173, 240, 0.993);
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.content2 .main_function_button_style_guess {
+  background-color: rgba(127, 240, 131, 0.993);
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.content2 .main_function_button_style_clear {
+  background-color: rgba(240, 204, 163, 0.993);
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.content2 .main_number_button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 60px 0 0 0;
+  gap: 15px;
+  list-style-type: none; /* 移除默认项目符号 */
+}
+
+.content2 .main_number_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px; /* Add some padding inside the box */
+  border: 2px solid transparent;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: 0px 4px 0px 0px white;
+  color: rgb(0, 0, 0);
+}
+.content2 .main_number_button:hover {
+  transform: scale(1.25);
+}
+
+.modal.content2-modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.content2-modal .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 15%;
+  width: 300px;
+  text-align: center;
+  min-height: auto;
+  height: 360px;
+}
+
+.content2-modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.content2-modal .close:hover,
+.content2-modal .close:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.content2-modal .count_style {
+  color: brown;
+  font-size: 25px;
+}
