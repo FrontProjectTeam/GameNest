@@ -1,0 +1,275 @@
+.content1 {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+}
+.content1 .flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content1 .flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content1 .score-wrapper-w {
+  width: 100%;
+  height: 0px;
+  position: relative;
+  margin-top: 0px;
+}
+.content1 .score-wrapper {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content1 .score-my-count {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+.content1 .score-opponent-count {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.content1 body {
+  background-color: green;
+}
+
+.content1 main {
+  margin-top: 40px;
+  width: 100%;
+  height: 500px;
+  display: grid;
+  grid-template-areas:
+    "agk agk agk"
+    "abl abc abr"
+    "gc gc gc"
+    "dbl dbc dbr"
+    "dgk dgk dgk";
+}
+
+.content1 .df {
+  opacity: 0;
+}
+.content1 .atk {
+  opacity: 1;
+}
+.content1 .atk-goal-post {
+  width: 500px;
+  height: 20px;
+  background-color: black;
+  margin-bottom: 10px;
+  color: whitesmoke;
+}
+.content1 .df-goal-post {
+  width: 500px;
+  height: 20px;
+  background-color: black;
+  margin-top: 10px;
+  color: whitesmoke;
+}
+
+.content1 .atk-gk {
+  position: relative;
+  grid-area: agk;
+}
+.content1 .atk-gk > div {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+}
+.content1 .atk-ball-left {
+  grid-area: abl;
+}
+
+.content1 .atk-ball-center {
+  grid-area: abc;
+}
+.content1 .atk-ball-center > button {
+  width: 50px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+}
+
+.content1 .atk-ball-right {
+  grid-area: abr;
+}
+.content1 .atk-ball-right > button {
+  width: 50px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+}
+.content1 .ball-center {
+  grid-area: gc;
+}
+.content1 .atk-ball-left > button {
+  width: 50px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+}
+
+.content1 .df-ball-left {
+  grid-area: dbl;
+}
+.content1 .df-ball-left > button {
+  width: 50px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+}
+.content1 .df-ball-center {
+  grid-area: dbc;
+}
+.content1 .ball-center > div {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+}
+.content1 .atk-or-df {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background-color: green;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0.1;
+  font-size: 200px;
+}
+.content1 .df-ball-center > button {
+  width: 50px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+}
+.content1 .df-ball-right {
+  grid-area: dbr;
+}
+.content1 .df-ball-right > button {
+  width: 50px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+}
+
+.content1 .df-gk {
+  grid-area: dgk;
+}
+.content1 .df-gk > div {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+}
+.content1 .gk {
+  position: absolute;
+  z-index: 1px;
+
+  width: 30px;
+  height: 30px;
+}
+
+.content1 .buttons > .start {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  width: 100px;
+  height: 20px;
+}
+.content1 .buttons {
+  position: relative;
+}
+.content1 .buttons > .next-button-switch {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  width: 100px;
+  height: 20px;
+  top: 30px;
+}
+
+.content1 .buttons > .reset-btn {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  width: 100px;
+  height: 20px;
+  top: 60px;
+}
+.content1 .ball-center {
+  transition: transform 2s;
+}
+
+.content1 .atk-ball-center-move-left {
+  transform: translate(-20%, -20%);
+}
+
+.content1 .atk-ball-center-move-right {
+  transform: translate(20%, -20%);
+}
+
+.content1 .atk-ball-center-move-center {
+  transform: translateY(-20%);
+}
+
+.content1 .df-ball-center-move-left {
+  transform: translate(-20%, +20%);
+}
+
+.content1 .df-ball-center-move-right {
+  transform: translate(20%, +20%);
+}
+
+.content1 .df-ball-center-move-center {
+  transform: translateY(+20%);
+}
+.content1 .df-gk-left {
+  transform: translateX(-300px);
+}
+.content1 .df-gk-right {
+  transform: translateX(300px);
+}
+.content1 .atk-gk-left {
+  transform: translateX(-300px);
+}
+.content1 .atk-gk-right {
+  transform: translateX(300px);
+}
+
+.content1 .result {
+  background-color: aquamarine;
+  position: absolute;
+  top: 100px;
+  width: 240px;
+  height: 80px;
+  opacity: 0;
+}

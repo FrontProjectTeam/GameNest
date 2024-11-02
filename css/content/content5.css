@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body.content5 {
+  width: 100%;
+  height: 700px;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+#header-count-range {
+  display: flex;
+  width: 500px;
+  height: 70px;
+  background-color: antiquewhite;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+
+.content5 .header-count {
+  font-size: 40px;
+  padding: 10px 0;
+}
+
+.main-hp-range {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-hp-ul {
+  display: flex;
+}
+
+.my-main-hp,
+.enemy-main-hp {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  border-radius: 25px;
+  border: 3px solid black;
+  background-color: darksalmon;
+  list-style-type: none;
+  text-align: center;
+  font-size: 30px;
+}
+
+.clone-hp {
+  display: none;
+}
+
+#main-word-ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-word {
+  height: 60px;
+  width: 250px;
+  margin: 15px;
+  font-size: 40px;
+  background-color: antiquewhite;
+  text-align: center;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+
+#main-text-range {
+  display: flex;
+  justify-content: center;
+  background-color: antiquewhite;
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+
+#main-text-center {
+  display: flex;
+  justify-content: center;
+}
+
+#main-text-p {
+  font-size: 25px;
+  text-align: center;
+}
+
+#main-text {
+  height: 35px;
+  width: 240px;
+  border: 0;
+  outline: none;
+  background-color: antiquewhite;
+  font-size: 25px;
+}
+.content5 form {
+  display: flex;
+}
