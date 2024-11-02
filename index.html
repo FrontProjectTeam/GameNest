@@ -56,6 +56,19 @@
           .forEach((element, index, array) => {
             element.addEventListener("click", function () {
               importPage(element.dataset.content);
+              console.log("클릭");
+              importPage(element.dataset.content);
+              const content = element.dataset.content;
+              console.log(content);
+              setTimeout(() => {
+                const targetElement = document.querySelector(`.${content}`);
+                if (targetElement) {
+                  console.log("요소를 찾았습니다:", targetElement);
+                  importScr(element.dataset.content);
+                } else {
+                  console.log("요소를 찾을 수 없습니다.");
+                }
+              }, 3000);
             });
           });
 
@@ -407,59 +420,49 @@
     <nav class="index-nav">
       <div class="index-nav-container">
         <a class="index-nav-item-a" data-content="content1">
-          <div class="index-nav-item-box">
-            <img
-              class="index-nav-item-img"
-              src="https://images.crazygames.com/icon/New.svg"
-              loading="lazy"
-              alt="New icon"
-            />
-            <div>content1</div>
-          </div>
+          <img
+            class="index-nav-item-img"
+            src="https://images.crazygames.com/icon/New.svg"
+            loading="lazy"
+            alt="New icon"
+          />
+          content1
         </a>
         <a class="index-nav-item-a" data-content="content2">
-          <div class="index-nav-item-box">
-            <img
-              class="index-nav-item-img"
-              src="	https://images.crazygames.com/icon/Trending.svg"
-              loading="lazy"
-              alt="New icon"
-            />
-            <div>content2</div>
-          </div>
+          <img
+            class="index-nav-item-img"
+            src="	https://images.crazygames.com/icon/Trending.svg"
+            loading="lazy"
+            alt="New icon"
+          />
+          content2
         </a>
         <a class="index-nav-item-a" data-content="content3">
-          <div class="index-nav-item-box">
-            <img
-              class="index-nav-item-img"
-              src="	https://images.crazygames.com/icon/Updated.svg"
-              loading="lazy"
-              alt="New icon"
-            />
-            <div>content3</div>
-          </div>
+          <img
+            class="index-nav-item-img"
+            src="	https://images.crazygames.com/icon/Updated.svg"
+            loading="lazy"
+            alt="New icon"
+          />
+          content3
         </a>
         <a class="index-nav-item-a" data-content="content4">
-          <div class="index-nav-item-box">
-            <img
-              class="index-nav-item-img"
-              src="https://images.crazygames.com/icon/Originals.svg"
-              loading="lazy"
-              alt="New icon"
-            />
-            <div>content4</div>
-          </div>
+          <img
+            class="index-nav-item-img"
+            src="https://images.crazygames.com/icon/Originals.svg"
+            loading="lazy"
+            alt="New icon"
+          />
+          content4
         </a>
         <a class="index-nav-item-a" data-content="content5">
-          <div class="index-nav-item-box">
-            <img
-              class="index-nav-item-img"
-              src="https://images.crazygames.com/icon/2players.svg"
-              loading="lazy"
-              alt="New icon"
-            />
-            <div>content5</div>
-          </div>
+          <img
+            class="index-nav-item-img"
+            src="https://images.crazygames.com/icon/2players.svg"
+            loading="lazy"
+            alt="New icon"
+          />
+          content5
         </a>
       </div>
     </nav>
