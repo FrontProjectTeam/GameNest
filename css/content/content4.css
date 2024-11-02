@@ -111,6 +111,8 @@
   margin-bottom: 4px;
   display: inline-block;
   text-indent: 4px;
+  color: var(--white);
+  opacity: 0.6;
 }
 /* 모달 */
 .content4 .modal {
